@@ -1,0 +1,9 @@
+.grid__margin--y  .cabecalho__menu {
+    margin-top: .5rem;
+    margin-bottom: .5rem;
+}
+.cabecalho__menu {
+    flex:  0 0 100%;
+    min-height: 0px;
+    min-width:  0px;    
+}

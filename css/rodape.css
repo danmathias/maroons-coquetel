@@ -1,0 +1,37 @@
+.fundo--rodape {
+    background-color: #121010;
+}
+.margem__rodape {
+    margin-top: 4rem;
+}
+.caixa__rodape {
+    border-top: 2px solid #26b918;        
+}
+.rotulo__link--rodape {
+    color: #fffcfc;
+}
+.rotulo__link--rodape:hover {
+    text-decoration: underline #ffd700 2px;
+}
+.margem__reducao--topo {
+    margin-top: 1.5rem;
+}
+.distribuir--elementos {
+    justify-content: space-around;
+}
+.rotulo__link--rodape {
+    text-decoration: none;
+    line-height: 1.6;
+}
+.titulo h3 {
+    border-bottom: 2px solid #ffd700;
+}
+.largura__personal--sobre {
+    width: 237px;
+}
+.largura__personal--termos {
+    width: 19%;
+}
+.text--direitos--autorais {
+    color: #fffcfc;
+}

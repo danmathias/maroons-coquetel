@@ -1,0 +1,25 @@
+html::before ::after {
+    box-sizing: border-box;
+    font-size: 100%;
+}
+body {
+    background-color: #fffcfc;
+    font-family: "brandon-grotesque", sans-serif;
+    font-style: normal;
+    font-weight: 200;
+    font-stretch: normal;
+    font-feature-settings: "liga","kern";
+    line-height: 120%;    
+    letter-spacing: normal;
+    text-transform: none;
+    
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    padding: 0;
+}
+
+ul, li {
+    padding: 0;
+}

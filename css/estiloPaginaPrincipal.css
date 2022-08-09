@@ -1,0 +1,7 @@
+.caixa__img--pag--principal {
+    position: relative;
+}
+.img1__pag--principal, .img2__pag--principal {
+    width: 50%;
+    position: absolute;
+}

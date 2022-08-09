@@ -1,0 +1,165 @@
+.caixa-principal {
+    width: 100%;
+    margin: 0 auto;    
+}
+.titulo-principal {
+    padding: 70px;
+    font-size: 2.5em;
+}
+.caixa {
+    margin: 10px 200px;
+    box-sizing: border-box;
+}
+.abas  {
+    display: flex;
+    
+}
+.abas button {
+    background-color: #ffd700;
+    border: 2px solid #121010;
+    color: #121010;
+    cursor: pointer;
+    flex-grow: 1;
+    flex-basis: 0;
+    font-size: 1.5em;
+    font-weight: bold;
+    outline: none;
+    padding: 10px;
+    transition: all .8s;
+    box-shadow: 5px 5px #443e3e;
+}
+.conteudo {
+    border: 3px solid #121010;
+    background-color:#ffd700;
+    min-height: auto;
+    padding: 20px ;
+}
+
+.esconder {
+    display: none;    
+}
+
+.abas .ativar {
+    background-color: #121010 ;    
+    color: #fffcfc;
+}
+.form__caixa {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.caixa__entrada--form {
+    box-sizing: border-box;
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+.rotulo--entrada {    
+    margin: 15px 0;
+    font-size: 1.3em;
+    font-weight: bold;    
+    color: #121010;
+}
+.input--cadastrar {
+    border: 1px solid #121010;
+    outline: 0;
+    border-radius: 5px; 
+    box-sizing: border-box;
+    display: block;
+    padding: 8px 0;
+    position: relative;
+    width: 60%;
+}
+.input--cadastrar:focus {
+    border: 2px solid #e1cece;
+}
+.caixa__entrada--form--invalido .input--cadastrar {
+    border: 2px solid #d21515;
+}
+.caixa__entrada--form--invalido .rotulo--entrada {
+        color: #d21515;
+}
+.caixa__entrada--form--invalido:before {
+    content: '';
+    display: inline-block;
+    width: 33px;
+    height: 32px;
+    position: absolute;
+    z-index: 1;
+    right: 16em;
+    transform: translateY(72%) scale(.65);
+    background-image: url(../imagens/validacao-erro.png);
+}
+.caixa__entrada--form--invalido .entrada__mensagem--erro {
+    color: #d21515;
+    display: block;
+    margin-top: .1em;
+}
+.entrada__mensagem--erro {
+    display: none;
+}
+/* .entrada__mensagem--erro .erro--cpf {
+    display: none;
+} */
+.caixa__entrada--form--valido .input--cadastrar {
+    border: 2px solid #26b918;
+}
+
+.caixa__entrada--form--valido .rotulo--entrada {
+    color: #26b918;
+}
+.caixa__entrada--form--valido:before {
+    content: '';
+    display: inline-block;
+    width: 33px;
+    height: 32px;
+    position: absolute;
+    z-index: 1;
+    right: 16em;
+    transform: translateY(72%) scale(.65);
+    background-image: url(../imagens/validacao-sucesso.png);
+}
+.caixa__principal--alternativa {
+    padding: 0px;
+}
+
+.link__recupera--senha {
+    text-decoration: none;
+    color: #121010;
+}
+.link__recupera--senha:hover {
+    background-color: #121010;
+    color: #fffcfc;
+    text-transform: uppercase;
+    padding: 10px;
+    transition: all .8s;
+}
+
+.cadastrar, .acessar, .experiencia__usuario {
+    margin: 15px auto;
+    width: 60%;
+    padding: 10px;
+    border-style: none;
+    border-radius: 5px;
+    font-size: 20px;
+    background:#121010;
+    color: #fffcfc;
+    cursor: pointer;
+}
+.acessar:hover {
+    background-color: #fffcfc;
+    border: 1px solid #121010;
+    font-size: 20px;
+    color: #121010;
+    transition: all .5s;
+}
+.cadastrar:hover {
+    background-color: #fffcfc;
+    border: 1px solid #121010;
+    font-size: 20px;
+    color: #121010;
+    transition: all .5s;
+}
+
+/* Css conteúdo profissional */
+

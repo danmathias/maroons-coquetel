@@ -1,0 +1,45 @@
+.cabecalho__menu--barra--topo {
+    border-bottom: 1px solid #26b918;
+    background-color: gold;
+    color: #2a2826;    
+}
+
+.espacamento--barra {
+    padding-right: 1rem;
+    padding-left: 1rem;
+    max-width: 80rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+.cabecalho__menu--barra--caixa--items {    
+    align-items: center;
+}
+.cabecalho__menu--barra--caixa--link {
+    padding: 10px 0.66rem;
+}
+.caixa__link--const--coquetel {
+    padding: 10px;
+}
+.caixa__link--acesso--conta {
+    padding: calc(10px + 1px);
+}
+
+.caixa__link--alt--idioma {
+    padding: calc(10px + 3px) 0.66rem;
+}
+
+.cabecalho__menu--barra--const--coquetel--botao {
+    width: auto;
+}
+.cabecalho__menu--barra--caixa--link:hover{
+    background-color: #fffcfc;
+    
+}
+.cabecalho__menu--barra--const--coquetel, .cabecalho__menu--barra--acesso, .cabecalho__menu--barra--seleciona--estados {
+    display: flex;
+    align-items: center;    
+}
+.text--rotulo {
+    text-decoration: none;
+    color: #121010;
+}

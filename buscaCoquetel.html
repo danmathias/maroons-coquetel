@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="pt-br" class="idade">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="width=device-width">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="https://fonts.adobe.com/fonts/brandon-grotesque#fonts-section" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/formularioDeAcesso.css">
+    <link rel="stylesheet" href="./css/flex.css">
+    <link rel="stylesheet" href="./css/cabecalhoMenu.css">
+    <link rel="stylesheet" href="./css/cabecalhoMenuBarra.css">
+    <link rel="stylesheet" href="./css/cabecalhoPesquisaRedSociais.css">
+    <link rel="stylesheet" href="./css/cabecalhoMenuNav.css">
+    <link rel="stylesheet" href="./css/conteudoPrincipalTitulo.css">
+    <link rel="stylesheet" href="./css/caixaConteudoPrincipal.css">
+    <link rel="stylesheet" href="./css/conteudoPrincipalCoquetelClassicos.css">
+    <link rel="stylesheet" href="./css/rodape.css">
+    <title>Busca coquetel</title>    
+</head>
+
+<body>
+
+  <!--Área de teste para abertura de janela de confirmação de idade e localidade utilizando o JavaScript -->
+      <div id="form__inicial" class="form__inicial" data-form-content="formulario--inicial">
+        <h2 class="titulo__principal--form">Assim como os principais destilados passam por maturação, o acesso é liberado apenas para <strong>maiores de 18 anos.</strong></h2>
+          <form action=" " method="dialog" class="form__apresentacao">
+
+            <div class="caixa__conteudo">
+              <label for="localidade" class="rotulo--localizacao">Qual o seu país de origem?</label>
+              <img src="./imagens/icons8-sort-down-40.png" class="seta--opcoes">                
+                <select id="localidade" class="selecao__dados" data-pais="localidade">
+                  <option value="BR">Brasil</option>
+                  <option value="VN">Vietnã</option>
+                  <option value="CU">Cuba</option>
+                  <option value="GT">Guatemala</option>
+                  <option value="HT">Haiti</option>
+                  <option value="GH">Gana</option> 
+                  <option value="CD">Congo</option>
+                  <option value="AO">Angola</option>                
+                </select>
+            </div>
+
+            <div class="caixa__conteudo">
+              <label for="nascimento" class="rotulo--idade">Qual é a sua idade?</label>
+              <img class="seta--opcoes" src="./imagens/icons8-sort-down-40.png">
+              <select name="nascimento" id="ano__nascimento" data-ano="entrada__idade" class="selecao__dados">
+                <option value="idade">16</option>
+                <option value="idade">17</option>
+                <option value="idade">18</option>
+                <option value="idade">19</option>
+                <option value="idade">20</option>
+                <option value="idade">21</option>
+                <option value="idade">22</option>
+                <option value="idade">23</option>
+                <option value="idade">24</option>
+                <option value="idade">25</option>
+                <option value="idade">26</option>
+                <option value="idade">27</option>
+                <option value="idade">28</option>
+                <option value="idade">29</option>
+                <option value="idade">30</option>
+                <option value="idade">31</option>
+                <option value="idade">32</option>
+                <option value="idade">33</option>
+                <option value="idade">34</option>
+                <option value="idade">35</option>
+                <option value="idade">36</option>
+                <option value="idade">37</option>
+                <option value="idade">38</option>
+                <option value="idade">39</option>
+                <option value="idade">40</option>
+                <option value="idade">41</option>
+                <option value="idade">42</option>
+                <option value="idade">43</option>
+                <option value="idade">44</option>
+                <option value="idade">45</option>
+                <option value="idade">46</option>
+                <option value="idade">47</option>
+                <option value="idade">48</option>
+                <option value="idade">49</option>
+                <option value="idade">50</option>
+                <option value="idade">51</option>
+                <option value="idade">52</option>
+                <option value="idade">53</option>
+                <option value="idade">54</option>
+                <option value="idade">55</option>
+                <option value="idade">56</option>
+                <option value="idade">57</option>
+                <option value="idade">58</option>
+                <option value="idade">59</option>
+                <option value="idade">60</option>
+                <option value="idade">61</option>
+                <option value="idade">62</option>
+                <option value="idade">63</option>
+                <option value="idade">64</option>
+                <option value="idade">65</option>
+                <option value="idade">66</option>
+                <option value="idade">67</option>
+                <option value="idade">68</option>
+                <option value="idade">69</option>
+                <option value="idade">70</option>
+                <option value="idade">71</option>
+                <option value="idade">72</option>
+                <option value="idade">73</option>
+                <option value="idade">74</option>
+                <option value="idade">75</option>
+                <option value="idade">76</option>
+                <option value="idade">77</option>
+                <option value="idade">78</option>
+                <option value="idade">79</option>
+                <option value="idade">80</option>
+                <option value="idade">81</option>
+                <option value="idade">82</option>
+                <option value="idade">83</option>
+                <option value="idade">84</option>
+                <option value="idade">85</option>
+                <option value="idade">86</option>
+                <option value="idade">87</option>
+                <option value="idade">88</option>
+                <option value="idade">89</option>
+                <option value="idade">90</option>
+                <option value="idade">91</option>
+                <option value="idade">92</option>
+                <option value="idade">93</option>
+                <option value="idade">94</option>
+                <option value="idade">95</option>
+                <option value="idade">96</option>
+                <option value="idade">97</option>
+                <option value="idade">98</option>
+                <option value="idade">99</option>
+                <option value="idade">100</option>
+              </select>
+            </div>            
+              <input type="button" id="botao__form--acesso" class="botao__form--acesso desabilitar" data-login-button="botao__form--acesso"  name="botao--nasc" value="Clique para acessar o conteúdo">            
+            </div>
+          </form>
+      </div>
+      
+
+      
+      <div class="grid__x grid__margem--y esconder" data-main-content="conteudo--principal">
+        <div class="cabecalho__menu">
+          <div class="cabecalho__menu--barra--topo barra__topo--fonte">
+            <div class="cabecalho__menu--barra--topo margem--barra espacamento--barra comprimento--barra">
+
+                  <!-- Icone construa o seu coquetel -->
+
+              <div class="cabecalho__menu--barra--caixa">
+                <div class="cabecalho__menu--barra--caixa--items grid__x">
+                  <div class="cabecalho__menu--barra--caixa--link caixa__link--const--coquetel">
+                    <a id="cabecalho__menu--barra--const--coquetel--botao" class=" cabecalho__menu--barra--const--coquetel text__barra--decor text--rotulo" href="./buscaCoquetel.html">
+                      <div class="cabecalho__menu--barra--const--coquetel">
+                      <img class="icon__coquetel--barra" src="./imagens/coquetel-taca.png" alt="copo longo tradicionalmente usado para coqueteis semelhante há piña colada" width="30" height="30" color="#121010" id="icon__coquetel">
+                      </div> 
+                      <span class="cabecalho__menu--barra--const--coquetel">Encontre coquetel ideal</span>
+                    </a>
+                  </div>    
+                  
+
+                    <!-- Ícone para acessar mais serviços do site -->
+
+                  <div class="cabecalho__menu--barra--caixa--link caixa__link--acesso--conta">
+                    <a id="cabecalho__menu--barra--botao-acesso" class=" cabecalho__menu--barra--acesso text__barra--decor text--rotulo" href="./formulario.html">
+                      <div class="cabecalho__menu--barra--botao--acesso icon__coquetel--barra">
+                        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                        width="24" height="24"
+                        viewBox="0 0 24 24"
+                        style=" fill:#121010;"><path d="M 12 1 C 9.1277778 1 6.7189086 3.0461453 6.1230469 5.7871094 L 8.078125 6.2128906 C 8.4822632 4.3538547 10.072222 3 12 3 C 14.27619 3 16 4.7238095 16 7 L 16 8 L 6 8 C 4.9069372 8 4 8.9069372 4 10 L 4 20 C 4 21.093063 4.9069372 22 6 22 L 18 22 C 19.093063 22 20 21.093063 20 20 L 20 10 C 20 8.9069372 19.093063 8 18 8 L 18 7 C 18 3.6761905 15.32381 1 12 1 z M 6 10 L 18 10 L 18 20 L 6 20 L 6 10 z M 12 13 C 10.9 13 10 13.9 10 15 C 10 16.1 10.9 17 12 17 C 13.1 17 14 16.1 14 15 C 14 13.9 13.1 13 12 13 z" id="icon__cadeado" class="icon__cadeado--acesso"></path>
+                        </svg>
+                      </div>                   
+                      <span class="cabecalho__menu--barra--acesso">Acesse seu cadastro</span>
+                    </a>
+                  </div>  
+
+                    <!-- Ícone para mudar a linguagem do site -->
+                  
+                  <div class="cabecalho__menu--barra--caixa--link caixa__link--alt--idioma">
+                    <div id="cabecalho__menu--barra--seleciona--estados" class="cabecalho__menu--barra cabecalho__menu--seleciona--estados">
+                      <div class="cabecalho__menu--barra--seleciona--estados">
+                        <img class="bandeira__icon--estados" src="./imagens/bandeira-brasil.png" alt="bandeira do brasil" width="24" height="24">
+                        <div class="cabecalho__menu--barra--seleciona--estados text--rotulo">País</div>
+                      </div>
+                    </div>
+                  </div>  
+                </div>  
+              </div> 
+            </div> 
+          </div>
+
+             <!-- Caixa cabeçalho logomarca, pesquisa e redes sociais -->
+
+          <div class="caixa__grid">
+            <div class="grid__x">
+              <header class="caixa__barra--nav">
+                <div class="grid__x justificar--fim">
+
+                  <div class="largura--caixa--redes">
+                    <div class="flex__grade alinha--centro justificar--espaco">                      
+                      <form action="#" method="dialog" class="grid__x">
+
+                        <!-- Botão do campo de pesquisa -->
+
+                        <button id="barra__pesquisa--alter--cabecalho" class="botao__pesquisa" type="button" aria-label="botao alternância">
+                          <span class="icon__pesquisa">                            
+                            <img alt="lupa de pesquisa" id="lupa__pesquisa" class="lupa__pesquisa" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHg9IjBweCIgeT0iMHB4Igp3aWR0aD0iMjQiIGhlaWdodD0iMjQiCnZpZXdCb3g9IjAgMCAyNCAyNCIKc3R5bGU9IiBmaWxsOiMwMDAwMDA7Ij4gICAgPHBhdGggZD0iTSA5IDIgQyA1LjE0NTg1MTQgMiAyIDUuMTQ1ODUxNCAyIDkgQyAyIDEyLjg1NDE0OSA1LjE0NTg1MTQgMTYgOSAxNiBDIDEwLjc0Nzk5OCAxNiAxMi4zNDUwMDkgMTUuMzQ4MDI0IDEzLjU3NDIxOSAxNC4yODEyNSBMIDE0IDE0LjcwNzAzMSBMIDE0IDE2IEwgMTkuNTg1OTM4IDIxLjU4NTkzOCBDIDIwLjEzNzkzNyAyMi4xMzc5MzcgMjEuMDMzOTM4IDIyLjEzNzkzOCAyMS41ODU5MzggMjEuNTg1OTM4IEMgMjIuMTM3OTM4IDIxLjAzMzkzOCAyMi4xMzc5MzggMjAuMTM3OTM4IDIxLjU4NTkzOCAxOS41ODU5MzggTCAxNiAxNCBMIDE0LjcwNzAzMSAxNCBMIDE0LjI4MTI1IDEzLjU3NDIxOSBDIDE1LjM0ODAyNCAxMi4zNDUwMDkgMTYgMTAuNzQ3OTk4IDE2IDkgQyAxNiA1LjE0NTg1MTQgMTIuODU0MTQ5IDIgOSAyIHogTSA5IDQgQyAxMS43NzMyNjggNCAxNCA2LjIyNjczMTYgMTQgOSBDIDE0IDExLjc3MzI2OCAxMS43NzMyNjggMTQgOSAxNCBDIDYuMjI2NzMxNiAxNCA0IDExLjc3MzI2OCA0IDkgQyA0IDYuMjI2NzMxNiA2LjIyNjczMTYgNCA5IDQgeiI+PC9wYXRoPjwvc3ZnPg=="/>                     
+                          </span>
+                        </button>
+
+                        <!-- Campo de busca -->
+
+                        <div id="campo--pesquisa" class="pacote__campo--pesquisa">
+                          <div class="caixa__campo--pesquisa grid__x">
+                            <input id="campo--pesquisa" class="campo__pesquisa" type="search" name="pesquisa" placeholder="procure o seu coquetel favorito" autocomplete="off">                            
+                          </div>                    
+                        </div>
+                      </form>
+                      
+
+                        <!-- Campo redes sociais e compartilhamento -->
+
+                      <div>
+                        <div class="alinha--centro grid__x">
+                          <a class="item__campo--sociais--twitter" href="#" target="blank">
+                            <span class="caixa__twitter--img">
+                              <img src="./imagens/icon-twitter.png" alt="passáro piando. Logomarca do twitter" id="icon--twitter">
+                            </span>                        
+                          </a>
+
+                          <a class="item__campo--sociais--instagram" href="https://www.instagram.com/kombimaroonsdrinks" target="blank">
+                            <span class="caixa__instagram--img">
+                              <img src="./imagens/icon-instagram.png" alt="passáro piando. Logomarca do twitter" id="icon--instagram">                              
+                            </span>                        
+                          </a>
+
+                          <a class="item__campo--sociais--instagram" href="https://www.facebook.com/kombimaroonsdrinks/" target="blank">
+                            <span class="caixa__facebook--img">
+                              <img src="./imagens/icon-facebook.png" alt="letra f. Logomarca do facebook" id="icon--facebook">
+                            </span>                        
+                          </a>
+
+                          <div class="cabecalho__botao--compartilha">
+                            <button class="botao--compartilha" data-abra="model--compartilhar" aria-controls="model--compartilhar" aria-haspopup="true" tabindex="0">
+                              <span class="grid__x medida__img--compartilha img--compartilha alinha--centro">
+                                <img src="./imagens/icon-compartilhar.png" alt="letra f. Logomarca do facebook" id="icon--facebook" class="img__compartilhamento">
+                                <span class="text__botao--compartilha">Compartilhar conteúdo</span>
+                              </span>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>    
+                  <!-- campo do menu de navegação entre as telas -->
+
+                  <nav class="cabecalho__nav">
+                    <ul id="menu__principal--cabecalho" class="cabecalho__nav--barra grid__x">
+                      <li class="cabecalho__nav--barra--larg">
+                        <ul class="items__principal--barra--nav lista--sem--estilo sem--margem">
+                          <li class="item__barra--nav"><a href="./paginaPrincipal.html" class="link__barra--nav">Página Principal</a></li>
+                          <li class="item__barra--nav"><a href="#" class="link__barra--nav">Meu bar</a></li>
+                          <li class="item__barra--nav"><a href="#" class="link__barra--nav">Sobre Maroons Coquetel</a></li>
+                          <li class="item__barra--nav"><a href="#" class="link__barra--nav">Consumo responsável</a></li>
+                          <li class="item__barra--nav"><a href="#" class="link__barra--nav">Carta de coquetéis</a></li>
+                          <li class="item__barra--nav"><a href="#" class="link__barra--nav">Coquetéis engarrafados</a></li>
+                          <li class="item__barra--nav borda--direita--nav"><a href="#" class="link__barra--nav">Contato</a></li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </nav>
+                </div>
+              </header>
+            </div>
+          </div>
+
+        </div>
+        
+        <!-- Conteúdo principal -->
+        
+
+        <!-- Título principal -->
+        <main class="conteudo__principal">
+          <div class="titulo__principal">
+           <div class="titulo__principal--caixa">
+             <h1 class="titulo__principal--texto">Encontre o coquetel ideal</h1>
+           </div> 
+          </div>
+
+          <!-- Pesquisa de coqueteis clássicos e construção de coquetel -->
+          
+          <div class="grade__caixa">
+            <div class="flex__grade">
+              <div class="escopo largura--grade">
+                <div class="flex__grade">
+                  <div class="escopo altura--auto">
+                    <form id="pesq__encontra--coquetel" class="submete__filtro--form" method="get" action="#">
+                      <div class="flex__grade">
+
+                        <!-- Campo pesquisa coqueteis clássicos -->
+
+                        <div class="margem__grade--y escopo largura__conteudo">
+                          <div class="flex__grade">
+                            <div class="escopo altura--auto grade--fund---altura borda__inferior--verde">
+                              <div class="margem__grade--x flex__grade margem__auto">
+                                <div class="reducao flex--atalho margin__grade--x margem__ponto--zero text__coquetel--classico largura--auto">
+                                  <span class="alinha__elemento--centro flex__grade img--medida">
+                                    <div class="escopo reducao img--medida margem__auto altura--auto">
+                                      <img src="./imagens/icon-globo.png" class="dimensao__icon">
+                                      <path d="M22 20L20 22 14 16 14 14 16 14z" class="dimensao__icon"></path>
+                                      <path d="M9,16c-3.9,0-7-3.1-7-7c0-3.9,3.1-7,7-7c3.9,0,7,3.1,7,7C16,12.9,12.9,16,9,16z M9,4C6.2,4,4,6.2,4,9c0,2.8,2.2,5,5,5 c2.8,0,5-2.2,5-5C14,6.2,11.8,4,9,4z"></path>
+                                      <path d="M13.7 12.5H14.7V16H13.7z" transform="rotate(-44.992 14.25 14.25)">                                        
+                                      </path>
+                                      </svg>
+                                    </div>
+                                  </span>
+                                </div>
+                                <div class="largura--grade largura--auto margem__espaco--esq">
+                                  <h3>Clássicos Globais</h3>
+                                  <div>Lista de coquetéis clássicos disponivéis</div>
+                                </div>                                
+                              </div>
+                            </div>
+                            <div class="escopo altura--auto margem__reducao--sup--infer">
+                              <div class="flex__grade">
+                                <div id="caixa__opcoes--classicos" class="largura--auto escopo flex--cresce">
+                                  <select name="classicos" id="opcoes__classicos" class="seletor__classicos">
+                                    <option value=" ">Escolha o clássico</option>
+                                    <option value="01">Margarita</option>
+                                    <option value="02">Amaretto Sour</option>
+                                    <option value="03">Mojito</option>
+                                    <option value="04">Caipirinha</option>
+                                    <option value="05">Ramos Gin Fizz</option>
+                                    <option value="06">Old Fashioned</option>
+                                    <option value="07">Mai Tai</option>
+                                    <option value="08">Pinã Colada</option>
+                                    <option value="09">Daiquiri</option>
+                                    <option value="10">Penicillian</option>
+                                  </select>
+                                </div>
+                              </div>
+                            </div>                                                       
+                          </div>
+                        </div>
+
+                        <!-- Campo pesquisa de coqueteis autorais -->
+
+                        <div class="escopo largura__conteudo margem__grade--y margem__esq--auto espacamento__inferior--item--2">
+                          <div class="flex__grade">
+                            <div class="escopo margin__grade--y altura--auto grade--fund---altura     borda__inferior--verde">
+                              <div class="margem__grade--x flex__grade margem__auto">
+                                <div class="reducao flex--atalho margin__grade--x margem__reducao--esq--dir text__coquetel--classico largura--auto">
+                                  <span class="alinha__elemento--centro flex__grade img--medida">
+                                    <div class="escopo reducao img--medida margem__auto altura--auto">
+                                      <img src="./imagens/icon-autoral.png" class="dimensao__icon">
+                                      <path d="M22 20L20 22 14 16 14 14 16 14z"></path>
+                                      <path d="M9,16c-3.9,0-7-3.1-7-7c0-3.9,3.1-7,7-7c3.9,0,7,3.1,7,7C16,12.9,12.9,16,9,16z M9,4C6.2,4,4,6.2,4,9c0,2.8,2.2,5,5,5 c2.8,0,5-2.2,5-5C14,6.2,11.8,4,9,4z"></path>
+                                      <path d="M13.7 12.5H14.7V16H13.7z" transform="rotate(-44.992 14.25 14.25)">                                        
+                                      </path>
+                                    </div>
+                                  </span>
+                                </div>    
+                                <div class="largura--grade largura--auto margem__espaco--esq">
+                                  <h3>Coqueteis Autorais</h3>
+                                  <div>Lista de coquetéis autorais</div>
+                                </div>    
+                              </div>
+                            </div>
+                            <div class="escopo altura--auto margem__reducao--sup--infer">
+                              <div class="flex__grade">
+                                <div id="caixa__opcoes--classicos" class="largura--auto escopo flex--cresce">
+                                  <select name="classicos" id="opcoes__classicos" class="seletor__classicos">
+                                    <option value=" ">Escolha o autoral</option>
+                                    <option value="01">Expresso Campesino</option>
+                                    <option value="02">Borbulha, caxiri</option>
+                                    <option value="03">Calidez</option>
+                                    <option value="04">Jerk Cocktail</option>
+                                    <option value="05">Pinã Colada Especia</option>
+                                    <option value="06">Nanny of the Maroons Cocktail</option>
+                                    <option value="07">Cana Caiana</option>
+                                    <option value="08">Pérola de Kaldi</option>
+                                    <option value="09">Flor do caribe</option>
+                                    <option value="10">Escarlete Daiquiri</option>
+                                  </select>
+                                </div>
+                              </div>
+                            </div>         
+                          </div>
+                        </div> 
+
+                        <!-- Campo de escolha por insumos, cerveja, destilados, frutas, mixer, licor e suco de frutas   -->
+
+                        <div class="escopo largura__conteudo margem__grade--y espacamento__inferior--item--2">
+                          <div class="flex__grade">
+                            <div class="escopo margin__grade--y altura--auto grade--fund---altura     borda__inferior--verde">
+                              <div class="margem__grade--x flex__grade margem__auto">
+                                <div class="reducao flex--atalho margin__grade--x margem__reducao--esq--dir text__coquetel--classico largura--auto">
+                                  <span class="alinha__elemento--centro flex__grade img--medida">
+                                    <div class="escopo reducao img--medida margem__auto altura--auto">
+                                      <img src="./imagens/icon-ingredientes.png" class="dimensao__icon">
+                                      <path d="M22 20L20 22 14 16 14 14 16 14z"></path>
+                                      <path d="M9,16c-3.9,0-7-3.1-7-7c0-3.9,3.1-7,7-7c3.9,0,7,3.1,7,7C16,12.9,12.9,16,9,16z M9,4C6.2,4,4,6.2,4,9c0,2.8,2.2,5,5,5 c2.8,0,5-2.2,5-5C14,6.2,11.8,4,9,4z"></path>
+                                      <path d="M13.7 12.5H14.7V16H13.7z" transform="rotate(-44.992 14.25 14.25)">                                        
+                                      </path>
+                                    </div>
+                                  </span>
+                                </div>                               
+                                <div class="largura--grade largura--auto margem__espaco--esq">
+                                  <h3>Buscar por ingredientes</h3>
+                                  <div>Encontre um coquetel com seu perfil de consumo
+                                  </div>
+                                </div> 
+                              </div>       
+                            </div>
+                            <div class="escopo altura--auto flex__atalho margem__reducao--sup--infer">
+                              <div class="flex__grade">                            
+                                <div class="escopo altura--auto margem__reducao--sup--infer largura__metade">
+                                  <div class="flex__grade">
+                                    <div class="altura--auto largura--auto espacamento__sup--icon margem__curta--icon">
+                                      <span class="flex__grade">
+                                        <div class="escopo largura--auto flex--atalho">                               
+                                          <img src="./imagens/icon-destilados.png" id="icon__destilado" class="icon__ingred--destil">                                   
+                                        </div>  
+                                      </span>  
+                                    </div> 
+                                    <div id="caixa__opcoes--classicos" class="largura--auto escopo flex--cresce">
+                                      <select name="classicos" id="opcoes__classicos" class="seletor__classicos">
+                                        <option value=" ">Por destilado</option>
+                                      </select>  
+                                    </div>    
+                                  </div>
+                                </div>
+                                <div class="escopo altura--auto margem__reducao--sup--infer largura__metade">
+                                  <div class="flex__grade">
+                                    <div class="altura--auto largura--auto espacamento__sup--icon margem__curta--icon">
+                                      <span class="flex__grade">
+                                        <div class="escopo largura--auto flex--atalho">                               
+                                          <img src="./imagens/icon-frutas.png" id="icon__destilado" class="icon__ingred--destil">                                   
+                                        </div>  
+                                      </span>  
+                                    </div> 
+                                    <div id="caixa__opcoes--classicos" class="largura--auto escopo flex--cresce">
+                                      <select name="classicos" id="opcoes__classicos" class="seletor__classicos">
+                                        <option value=" ">Por fruta/Suco</option>
+                                      </select>  
+                                    </div>    
+                                  </div>
+                                </div>
+                                <div class="escopo altura--auto margem__reducao--sup--infer largura__metade">
+                                  <div class="flex__grade">
+                                    <div class="altura--auto largura--auto espacamento__sup--icon margem__curta--icon">
+                                      <span class="flex__grade">
+                                        <div class="escopo largura--auto flex--atalho">                               
+                                          <img src="./imagens/icon-carbonatados.png" id="icon__destilado" class="icon__ingred--destil">                                   
+                                        </div>  
+                                      </span>  
+                                    </div> 
+                                    <div id="caixa__opcoes--classicos" class="largura--auto escopo flex--cresce">
+                                      <select name="classicos" id="opcoes__classicos" class="seletor__classicos">
+                                        <option value=" ">Bebida gaseificada</option>
+                                      </select>  
+                                    </div>    
+                                  </div>
+                                </div>
+                                <div class="escopo altura--auto margem__reducao--sup--infer largura__metade">
+                                  <div class="flex__grade">
+                                    <div class="altura--auto largura--auto espacamento__sup--icon margem__curta--icon">
+                                      <span class="flex__grade">
+                                        <div class="escopo largura--auto flex--atalho">                               
+                                          <img src="./imagens/icon-licores.png" id="icon__destilado" class="icon__ingred--destil">                                   
+                                        </div>  
+                                      </span>  
+                                    </div> 
+                                    <div id="caixa__opcoes--classicos" class="largura--auto escopo flex--cresce">
+                                      <select name="classicos" id="opcoes__classicos" class="seletor__classicos">
+                                        <option value=" ">Por Licor</option>
+                                      </select>  
+                                    </div>    
+                                  </div>
+                                </div>
+                                <div class="escopo altura--auto margem__reducao--sup--infer largura__metade">
+                                  <div class="flex__grade">
+                                    <div class="altura--auto largura--auto espacamento__sup--icon margem__curta--icon">
+                                      <span class="flex__grade">
+                                        <div class="escopo largura--auto flex--atalho">                               
+                                          <img src="./imagens/icon-cerveja.png" id="icon__destilado" class="icon__ingred--destil">                                   
+                                        </div>  
+                                      </span>  
+                                    </div> 
+                                    <div id="caixa__opcoes--classicos" class="largura--auto escopo flex--cresce">
+                                      <select name="classicos" id="opcoes__classicos" class="seletor__classicos">
+                                        <option value=" ">Por cerveja</option>
+                                      </select>  
+                                    </div>    
+                                  </div>
+                                </div>
+                                <div class="escopo altura--auto margem__reducao--sup--infer largura__metade">
+                                  <div class="flex__grade">
+                                    <div class="altura--auto largura--auto espacamento__sup--icon margem__curta--icon">
+                                      <span class="flex__grade">
+                                        <div class="escopo largura--auto flex--atalho">                               
+                                          <img src="./imagens/icon-bitter.png" id="icon__destilado" class="icon__ingred--destil">                                   
+                                        </div>  
+                                      </span>  
+                                    </div> 
+                                    <div id="caixa__opcoes--classicos" class="largura--auto escopo flex--cresce">
+                                      <select name="classicos" id="opcoes__classicos" class="seletor__classicos">
+                                        <option value=" ">Por Bitter</option>
+                                      </select>  
+                                    </div>    
+                                  </div>
+                                </div>
+                              </div>
+                            </div>         
+                          </div>                          
+                        </div>
+                        
+                        <div class="escopo largura__conteudo margem__grade--y margem__esq--auto espacamento__inferior--item--2">
+                          <div class="flex__grade">
+                            <div class="escopo margin__grade--y altura--auto grade--fund---altura     borda__inferior--verde">
+                              <div class="margem__grade--x flex__grade margem__auto">
+                                <div class="reducao flex--atalho margin__grade--x margem__reducao--esq--dir text__coquetel--classico largura--auto">
+                                  <span class="alinha__elemento--centro flex__grade img--medida">
+                                    <div class="escopo reducao img--medida margem__auto altura--auto">
+                                      <img src="./imagens/icon-estrela.png" class="dimensao__icon">
+                                      <path d="M22 20L20 22 14 16 14 14 16 14z"></path>
+                                      <path d="M9,16c-3.9,0-7-3.1-7-7c0-3.9,3.1-7,7-7c3.9,0,7,3.1,7,7C16,12.9,12.9,16,9,16z M9,4C6.2,4,4,6.2,4,9c0,2.8,2.2,5,5,5 c2.8,0,5-2.2,5-5C14,6.2,11.8,4,9,4z"></path>
+                                      <path d="M13.7 12.5H14.7V16H13.7z" transform="rotate(-44.992 14.25 14.25)">                                        
+                                      </path>
+                                    </div>
+                                  </span>
+                                </div>    
+                                <div class="largura--grade largura--auto margem__espaco--esq">
+                                  <h3>Por Avaliação</h3>
+                                  <div>Escolha por coquetéis mais bem avaliados</div>
+                                </div>    
+                              </div>
+                            </div>
+                            <div class="escopo altura--auto margem__reducao--sup--infer">
+                              <div class="flex__grade">
+                                <div id="caixa__opcoes--classicos" class="largura--auto escopo flex--cresce">
+                                  <select name="classicos" id="opcoes__classicos" class="seletor__classicos">
+                                    <option value=" ">Escolha uma avaliação</option>                                    
+                                  </select>
+                                </div>
+                              </div>
+                            </div>         
+                          </div>                          
+                        </div>
+                        <div class="escopo largura__conteudo margem__grade--y  espacamento__inferior--item--2">
+                          <div class="flex__grade">
+                            <div class="escopo margin__grade--y altura--auto grade--fund---altura     borda__inferior--verde">
+                              <div class="margem__grade--x flex__grade margem__auto">
+                                <div class="reducao flex--atalho margin__grade--x margem__reducao--esq--dir text__coquetel--classico largura--auto">
+                                  <span class="alinha__elemento--centro flex__grade img--medida">
+                                    <div class="escopo reducao img--medida margem__auto altura--auto">
+                                      <img src="./imagens/icon-sem-alcool.png" class="dimensao__icon">                                      
+                                    </div>
+                                  </span>
+                                </div>    
+                                <div class="largura--grade largura--auto margem__espaco--esq">
+                                  <h3>Zero Álcool</h3>
+                                  <div>Opções não-alcóolicas</div>
+                                </div>    
+                              </div>
+                            </div>
+                            <div class="escopo altura--auto margem__reducao--sup--infer">
+                              <div class="flex__grade">
+                                <div id="caixa__opcoes--classicos" class="largura--auto escopo flex--cresce">
+                                  <select name="classicos" id="opcoes__classicos" class="seletor__classicos">
+                                    <option value=" ">Veja as opções</option>                                    
+                                  </select>
+                                </div>
+                              </div>
+                            </div>         
+                          </div>
+                        </div>
+                        <div class="escopo largura__conteudo margem__grade--y  espacamento__inferior--item--2 margem__esq--auto">
+                          <div class="flex__grade">
+                            <div class="escopo margin__grade--y altura--auto grade--fund---altura     borda__inferior--verde">
+                              <div class="margem__grade--x flex__grade margem__auto">
+                                <div class="reducao flex--atalho margin__grade--x margem__reducao--esq--dir text__coquetel--classico largura--auto">
+                                  <span class="alinha__elemento--centro flex__grade img--medida">
+                                    <div class="escopo reducao img--medida margem__auto altura--auto">
+                                      <img src="./imagens/icon-estilo.png" class="dimensao__icon">
+                                      <path d="M22 20L20 22 14 16 14 14 16 14z"></path>
+                                      <path d="M9,16c-3.9,0-7-3.1-7-7c0-3.9,3.1-7,7-7c3.9,0,7,3.1,7,7C16,12.9,12.9,16,9,16z M9,4C6.2,4,4,6.2,4,9c0,2.8,2.2,5,5,5 c2.8,0,5-2.2,5-5C14,6.2,11.8,4,9,4z"></path>
+                                      <path d="M13.7 12.5H14.7V16H13.7z" transform="rotate(-44.992 14.25 14.25)">                                        
+                                      </path>
+                                    </div>
+                                  </span>
+                                </div>    
+                                <div class="largura--grade largura--auto margem__espaco--esq">
+                                  <h3>Por Estilo</h3>
+                                  <div>Filtre o melhor estilo de coquetel que combine com seu dia</div>
+                                </div>    
+                              </div>
+                            </div>
+                            <div class="escopo altura--auto margem__reducao--sup--infer">
+                              <div class="flex__grade">
+                                <div id="caixa__opcoes--classicos" class="largura--auto escopo flex--cresce">
+                                  <select name="classicos" id="opcoes__classicos" class="seletor__classicos">
+                                    <option value=" ">Escolha o estilo</option>                                    
+                                  </select>
+                                </div>
+                              </div>
+                            </div>         
+                          </div>
+                        </div>
+                        <div class="escopo largura__conteudo margem__grade--y  espacamento__inferior--item--2 ">
+                          <div class="flex__grade">
+                            <div class="escopo margin__grade--y altura--auto grade--fund---altura     borda__inferior--verde">
+                              <div class="margem__grade--x flex__grade margem__auto">
+                                <div class="reducao flex--atalho margin__grade--x margem__reducao--esq--dir text__coquetel--classico largura--auto">
+                                  <span class="alinha__elemento--centro flex__grade img--medida">
+                                    <div class="escopo reducao img--medida margem__auto altura--auto">
+                                      <img src="./imagens/icon-control.png" class="dimensao__icon">
+                                      <path d="M22 20L20 22 14 16 14 14 16 14z"></path>
+                                      <path d="M9,16c-3.9,0-7-3.1-7-7c0-3.9,3.1-7,7-7c3.9,0,7,3.1,7,7C16,12.9,12.9,16,9,16z M9,4C6.2,4,4,6.2,4,9c0,2.8,2.2,5,5,5 c2.8,0,5-2.2,5-5C14,6.2,11.8,4,9,4z"></path>
+                                      <path d="M13.7 12.5H14.7V16H13.7z" transform="rotate(-44.992 14.25 14.25)">                                        
+                                      </path>
+                                    </div>
+                                  </span>
+                                </div>    
+                                <div class="largura--grade largura--auto margem__espaco--esq">
+                                  <h3>Perfil de Sabor</h3>
+                                  <div>Filtro por nível alcoolico/duçor, acidez</div>
+                                </div>    
+                              </div>
+                            </div>
+                            <div class="escopo flex__atalho altura--auto margem__reducao--sup--infer">
+                              <div class="flex__grade">
+                                <div class="escopo altura--auto largura__conteudo flex--atalho" style="margin-right: 1rem;">
+                                  <div class="flex__grade"> 
+                                    <div class=" escopo flex--atalho largura--auto flex--cresce">
+                                      <div class="flex__grade">
+                                        <div class="largura__conteudo metade largura__metade flex--atalho escopo rotulo--text">
+                                          <strong>Alcoolico</strong>
+                                        </div>
+                                        <div class="largura__conteudo metade flex--atalho escopo rotulo--text alinha__text--dir">
+                                          <strong>Zero Alcool</strong>
+                                        </div>
+
+                                        <!-- barra para encontrar do coquetel mais alcoolico até o com menor teor. O ponto de equilibrio será no centro  -->
+
+                                        <div id="leve__para__pesado" class="escopo barra__analise flex--atalho"> <!--Nesse ponto será incluido evento JS para a análise ser realizada -->
+
+                                          <!--Esse elemento também vai receber eventos no futuro-->
+                                          <span class="controle__barra--medida alinha__elemento--centro" role="slider" tabindex="0" aria-controls="slider" aria-valuemax="10" aria-valuemin="0" aria-valuenow="0" aria-orientation="horizontal">
+                                            <span class="flex__grade alinha__elemento--centro">
+                                              <embed type="image/svg+xml" src="./imagens/Group 1.svg" class="icon--seta--controle"/>                                        
+                                            </span>
+                                          </span>
+                                          <span class="barra__analise--preencher" style="width: 0px; min-width: 100%; left: 0%;">
+                                          </span>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <!--Esse elemento também vai receber evento.-->
+                                    <div class="descricao__slider escopo flex--atalho">
+                                      Do
+                                      <span class="descricao__slider--js--desc">mais alcoolico</span> 
+                                      <span class="decricao__slider--js--desc">ao sem álcool.</span>
+                                    </div>                                
+                                  </div>                              
+                                </div>
+                                <div class="escopo altura--auto largura__conteudo flex--atalho margin--dir" style="margin-left: 1rem;">
+                                  <div class="flex__grade"> 
+                                    <div class=" escopo flex--atalho largura--auto flex--cresce">
+                                      <div class="flex__grade">
+                                        <div class="largura__conteudo metade flex--atalho escopo rotulo--text">
+                                          <strong>Acidez</strong>
+                                        </div>
+                                        <div class="largura__conteudo metade flex--atalho escopo rotulo--text alinha__text--dir">
+                                          <strong>Duçor</strong>
+                                        </div>
+
+                                        <!-- barra para encontrar do coquetel mais alcoolico até o com menor teor. O ponto de equilibrio será no centro  -->
+
+                                        <div id="leve__para__pesado" class="escopo barra__analise flex--atalho"> <!--Nesse ponto será incluido evento JS para a análise ser realizada -->
+
+                                          <!--Esse elemento também vai receber eventos no futuro-->
+                                          <span class="controle__barra--medida alinha__elemento--centro" role="slider" tabindex="0" aria-controls="slider" aria-valuemax="10" aria-valuemin="0" aria-valuenow="0" aria-orientation="horizontal">
+                                            <span class="flex__grade alinha__elemento--centro">
+                                              <embed type="image/svg+xml" src="./imagens/Group 1.svg" class="icon--seta--controle"/>                                        
+                                            </span>
+                                          </span>
+                                          <span class="barra__analise--preencher" style="width: 0px; min-width: 100%; left: 0%;">
+                                          </span>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <!--Esse elemento também vai receber evento.-->
+                                    <div class="descricao__slider escopo flex--atalho">
+                                      Do
+                                      <span class="descricao__slider--js--desc">mais acído</span> 
+                                      <span class="decricao__slider--js--desc">ao mais adocicado.</span>
+                                    </div>                                
+                                  </div>                              
+                                </div>
+                              </div>
+                            </div>    
+                          </div>
+                        </div>
+                        <div class="escopo flex--atalho">
+                          <div class="margem__grade--y--sub flex__grade">
+                            <div class="altura--auto largura--auto flex--cresce margem__reducao--sup--infer">
+                              <!--Tag botão vai receber evento para submeter o formulário -->
+                              <button id="submete--pesquisa" class="botao estilo__botao--busca preencher" type="submit">
+                                <span class="flex__grade alinha__elemento--centro img--medida">
+                                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="dimensao__cor--icon">
+                                    <path d="M 9 2 C 5.1458514 2 2 5.1458514 2 9 C 2 12.854149 5.1458514 16 9 16 C 10.747998 16 12.345009 15.348024 13.574219 14.28125 L 14 14.707031 L 14 16 L 20 22 L 22 20 L 16 14 L 14.707031 14 L 14.28125 13.574219 C 15.348024 12.345009 16 10.747998 16 9 C 16 5.1458514 12.854149 2 9 2 z M 9 4 C 11.773268 4 14 6.2267316 14 9 C 14 11.773268 11.773268 14 9 14 C 6.2267316 14 4 11.773268 4 9 C 4 6.2267316 6.2267316 4 9 4 z">                                      
+                                    </path>
+                                  </svg>
+                                  <span class="largura--auto flex--atalho margem--esquer--personal rotulo--botao">
+                                    Buscar a opção escolhida
+                                  </span>
+                                </span>
+                              </button> 
+                            </div>
+                            <div class="text--meio--botao"> ou </div>
+                            <div class="altura--auto largura--auto flex--cresce margem__reducao--sup--infer">
+                              <!--Tag botão vai receber evento para submeter o formulário -->
+                              <button id="submete--pesquisa" class="botao preencher estilo__botao--aleatorio" type="submit">
+                                <span class="flex__grade alinha__elemento--centro img--medida">
+                                  <embed type="image/svg+xml" src="./imagens/dado-aleatorio.svg" class="icon__dado"/>
+                                  <span class="largura--auto flex--atalho margem--esquer--personal rotulo--botao--aleatorio">
+                                    Buscar coquetel aleatório
+                                  </span>
+                                </span>
+                              </button> 
+                            </div>
+                          </div>
+                        </div>    
+                      </div>      
+                    </form> 
+                  </div>  
+                </div>
+              </div>
+            </div>
+          </div>
+        </main>
+
+        <!--Rodapé -->
+
+        <footer class="escopo flex--atalho altura--auto margem__rodape fundo--rodape">
+          <div class="caixa__rodape">
+            <div class="grade__caixa">
+              <div class="margem__reducao--sup--infer">
+
+                <!-- Caixa dos termos de resposabilidade do site -->
+
+                <div class="flex__grade flex--atalho escopo">
+                  <div class="caixa__condicoes margem__reducao--topo">                    
+                    <ul class="flex__grade lista--sem--estilo distribuir--elementos">
+                      <li class="flex--atalho">
+                        <a class="rotulo__link--rodape titulo" href="#">
+                          <h3>Página Principal</h3>
+                        </a>                    
+                        <a class="rotulo__link--rodape" href="./indiceFormulario.html">Acesse o seu cadastro/Cadastre-se</a>
+                      </li>
+
+                      <li class="flex--atalho largura__personal--sobre">
+                        <a class="rotulo__link--rodape titulo" href="#">
+                          <h3>Sobre Maroons Coquetel</h3>
+                        </a>                      
+                        <a class="rotulo__link--rodape" href="#">Contato</a>                     
+                        <a class="rotulo__link--rodape"href="#">Sugestões/Reclamações</a>
+                      </li>
+
+                      <li class="flex--atalho largura__personal--termos altura--auto">
+                        <a class="rotulo__link--rodape titulo" href="#">
+                          <h3>Termos & Condições</h3>
+                        </a>               
+                        <a class="rotulo__link--rodape"href="#">Politica de Privacidade</a>              
+                        <a class="rotulo__link--rodape"href="#">Politica de Coookies</a>
+                        <a class="rotulo__link--rodape"href="#">Entrega de Coqueteis</a>
+                        <a class="rotulo__link--rodape"href="#">Retorno e Cancelamento</a>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="escopo flex--atalho margem__reducao--sup--infer">
+                    <div class="flex__grade">
+                      <a class="item__campo--sociais--twitter" href="#" target="blank">
+                        <span class="caixa__twitter--img">
+                          <img src="./imagens/icon-twitter.png" alt="passáro piando. Logomarca do twitter" id="icon--twitter" width="48" height="48">
+                        </span>                        
+                      </a>
+                      <a class="item__campo--sociais--instagram" href="https://www.instagram.com/kombimaroonsdrinks" target="blank">
+                        <span class="caixa__instagram--img">
+                          <img src="./imagens/icon-instagram.png" alt="passáro piando. Logomarca do twitter" id="icon--instagram">                              
+                        </span>                        
+                      </a>
+
+                      <a class="item__campo--sociais--instagram" href="https://www.facebook.com/kombimaroonsdrinks/" target="blank">
+                        <span class="caixa__facebook--img">
+                          <img src="./imagens/icon-facebook.png" alt="letra f. Logomarca do facebook" id="icon--facebook" width="48" height="48">
+                        </span>                        
+                      </a>
+                    </div>
+                  </div>
+                  <div class="text--direitos--autorais margem__reducao--sup--infer altura--auto largura--auto">
+                    <p>&copy; Marrons Coquetel 2022. Todos os direitos reservados</p>
+                    <p>br-pt</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </footer>
+      </div>  
+    </div>   
+    <script src="./javascript/formularioLiberacao.js"></script> 
+    
+</body>
+</html>

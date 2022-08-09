@@ -1,0 +1,53 @@
+.conteudo__principal {
+    width: 100%;
+    height: auto;
+    flex: 0 0 auto;
+    display: block;
+    min-width: 0px;
+    min-height: 0px;
+}
+.conteudo__principal::before, ::after{
+    box-sizing: border-box;
+}
+
+.grade__caixa {
+    padding: 0 1rem 0 1rem;
+    max-width: 80rem;
+    margin-left: auto;
+    margin-right: auto;    
+}
+
+.flex__grade {
+    display: flex;
+    flex-flow: row wrap;
+}
+.escopo {    
+    min-height: 0px;
+    min-width: 0px;
+    width: 100%;    
+}
+.altura--auto {
+    height: auto;
+}
+.margin__grade--x .largura--grade {
+    width: calc(100% - 1rem);
+}
+.margem__grade--x {
+    margin: 0 .5rem 0 .5rem;    
+}
+.margem__grade--y {
+    margin: .5rem 0 .5rem 0;
+}
+.espacamento--inferior {
+    padding-bottom: 1rem;
+}
+.submete__filtro--form {
+    font-weight: 200;
+    text-transform: none;
+}
+.borda__inferior--verde {
+    border-bottom: 2px solid #26b918;
+}
+.margem__esq--auto {
+    margin-left: auto;    
+}

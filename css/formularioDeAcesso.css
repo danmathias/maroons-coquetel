@@ -1,0 +1,99 @@
+.form__inicial {
+    background: no-repeat center/100% url("../imagens/expresso\ campesino.jpg");
+    height: auto;
+}
+.form__inicial {
+    margin: 0 auto;
+    padding: 1rem 20rem 0;
+    height: 600px;
+}
+
+.titulo__principal--form {
+    color: #fffcfc;
+    padding-top: 10px;
+    text-align: center;
+    letter-spacing: 3px;
+    line-height: 25px;  
+}
+
+.titulo__principal--form strong {
+    color: #121010;
+}
+
+.form__apresentacao {
+    display: flex;
+    flex-flow: column wrap;
+}
+
+.caixa__conteudo {
+    background-color: transparent;
+    position: relative;
+    height: 64px;
+    border: 2px solid #ffd708;
+    margin: 2rem 0 1rem 0;
+}
+
+.rotulo--localizacao {
+    color: #fffcfc;
+    display: inline-block;    
+    font-size: 18px;
+    height: 100%;
+    left: 0px;
+    line-height: 64px;
+    width: 100%;
+    padding-left: 30px;
+    position: absolute;
+    top: 0;
+}
+
+.seta--opcoes { 
+    bottom: 11px;
+    width: 40px;
+    right: 20px;
+    position: absolute;
+
+
+}
+.rotulo--idade {
+    color: #fffcfc;
+    position: absolute;
+    line-height: 64px;
+    width: 100%;
+    height: 100%;
+    left: 0px;
+    top: 0;
+    font-size: 18px;
+    padding-left: 30px;
+    display: inline-block;    
+}
+.selecao__dados {
+    width: 100%;
+    position: absolute;
+    height: 100%;
+    top: 0%;
+    left: 0%;
+    opacity: 0;
+    cursor: pointer;    
+}
+.selecao__dados option {
+    background-color: #121010;
+    color: #fff;
+}
+.entrada__idade {
+    margin: .5rem 0 1.5rem;    
+}
+.botao__form--acesso {
+    background-color: #121010 ;
+    font-size: 18px;
+    transition-duration: 1s;
+    transition-property: background-color;
+    cursor: pointer;
+    color: #fff;
+    line-height: 64px;
+    border-radius: 5px;
+}
+
+.form__inicial .desabilitar {
+    pointer-events: none;
+    opacity: 0.4;
+}
