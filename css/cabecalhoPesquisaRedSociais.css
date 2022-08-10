@@ -84,8 +84,11 @@
     cursor: pointer;
 }
 .botao--compartilha:hover {
-    opacity: .9;
+    background-color: #ffd700;
+    border-bottom: solid #26b918 2px;
+    transition: all .8s;
 }
+
 .medida__img--compartilha img {
     width: 20px;
     height: 20px;
@@ -93,14 +96,18 @@
 .img--compartilha img {
     filter: invert(96%) sepia(51%) saturate(307%) hue-rotate(293deg) brightness(105%) contrast(101%);
 }
+.img--compartilha:hover img {
+    filter: invert(0%) sepia(6%) saturate(11%) hue-rotate(131deg) brightness(108%) contrast(97%);
+}
+
 .text__botao--compartilha {
     font-size: 15px;
     padding: 1rem 1rem 1rem 0;
     color: #fffcfc;
 }
-/* .caixa__instagram--img {
-    filter: invert(20%) sepia(80%) saturate(2656%) hue-rotate(266deg) brightness(89%) contrast(79%);
-} */
+.text__botao--compartilha:hover {
+    color: #121010;
+}
 .caixa__twitter--img:hover img {
     filter: invert(62%) sepia(62%) saturate(4283%) hue-rotate(161deg) brightness(96%) contrast(101%);    
 }
