@@ -41,7 +41,7 @@ export function validar(dadosEntrada) {
                 msg = mensagensErro[tipoEntrada][erro];
             }            
         }
-        return msg
+        return msg;
     }
     //  Objeto exclusivo para sinalização de dadosEntrada incorretos.
     const mensagensErro = {
@@ -75,7 +75,6 @@ export function validar(dadosEntrada) {
         }
     }
     // Fim da tarefa.
-
     
     
     
@@ -111,40 +110,48 @@ export function validar(dadosEntrada) {
     // Início da lógica para para autorizar cadastro de maiores de 18 anos e o digíto verificador do CPF.
 
     const campoInvalido = {
-         nascimento: dadosEntrada => confirmaDataNascimento(dadosEntrada.value)
-         ,
+        // nascimento: dadosEntrada => confirmaDataNascimento(dadosEntrada.value)
+        nascimento (dadosEntrada) {
+            confirmaDataNascimento(dadosEntrada.value);
+        }
+        ,
         cpf: cpfDigitado => validarCpf(cpfDigitado.value)        
     }
     
 
     // Início da lógica para cadastro para maiores de 18 anos.
     function confirmaDataNascimento (dataEntrada) {
-        let vetorData = dataEntrada.split("/")
+        
+        let vetorData = dataEntrada.split("/");
         let mes = vetorData[1];
         let dia = vetorData[0];
-         let ano = vetorData[2];
-         let dataReconfigurada = `${mes}/${dia}/${ano}`;
-         let dataSistemaOper = new Date(dataReconfigurada);
-         let msg = '';        
-         if (!idadeAutorizada(dataEntrada)) {                    
-             msg = 'O cadastro só é autorizado para maiores de 18 anos!'
-         } 
-             dataEntrada.setCustomValidity('')           
+        let ano = vetorData[2];
+        let dataReconfigurada = `${mes}/${dia}/${ano}`;
+        let dataSistemaOper = new Date(dataReconfigurada);
+        
+        let mensagemErro = document.parentElement.getElementsByClassName('entrada__mensagem--erro');
+        mensagemErro.innetHTML = '';
+        try {
+        if (!idadeAutorizada(dataSistemaOper)) throw new Error ("O cadastro só é autorizado para maiores de 18 anos!");
+        
+        } catch (error) {
+            mensagemErro.innerHTML = error;
+        }
+
      }
  
      function idadeAutorizada (data) {
-         let objetoData = new Date().toLocaleDateString('pt-br')
-         let diaNascUsuario = data.substring(0,2)
-         let mesNascUsuario = data.substring(3,5)
-         let anoNascUsuario = parseInt(data.substring(6,10))
-         let idadeAutorizada = (anoNascUsuario + 18)
-         let idadeUsuario = new Date(`${diaNascUsuario}/${mesNascUsuario}/${idadeAutorizada}`)
+        
+        const idadeUsuario = data;  
 
-         let diaAtual = objetoData.getDate();
-         let mesAtual = objetoData.getMonth() + 1;
-         let anoAtual = objetoData.getFullYear();
-         let dataAtual = `${diaAtual}${mesAtual}${anoAtual}`
-         let idadePermitida = (data.getDate(), data.getMonth() , data.getFullYear() + 18)        
+        const dataAtual = new Date();
+        const diaAtual = dataAtual.getDate();
+        const mesAtual = dataAtual.getMonth() + 1;
+        const anoAtual = dataAtual.getFullYear() - 18;
+        const novaData = `${mesAtual}/${diaAtual}/${anoAtual}`
+        const dataAtualAlterada = new Date(novaData);
+        
+        return idadeUsuario <= dataAtualAlterada;
      }
 
     //  Fim da tarefa para clientes maiores de 18 anos.
