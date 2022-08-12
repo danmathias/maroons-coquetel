@@ -1,27 +1,28 @@
 //  Início da tarefa que vai incluir máscaras nos inputs: Data de nascimento, Nome e sobrenome e telefone.     
 
 //  FUNÇÃO GENÉRICA   
-export function validar(dadosEntrada) {                
-        const tipoDeEntrada = dadosEntrada.dataset.entrada;        
+export function validar(dadosEntradas) {                
+        const tipoDeEntrada = dadosEntradas.dataset.entrada;        
         // CONDIÇÕES FUNDAMENTAIS PARA QUE O CÓDIGO FAÇA PERCURSO CORRETAMENTE
 
         // Condição das máscaras do input do formulário.
         if (mascara[tipoDeEntrada]) 
-            dadosEntrada.value = mascara[tipoDeEntrada](dadosEntrada);      
+            dadosEntradas.value = mascara[tipoDeEntrada](dadosEntradas);      
 
         // Condição para autorizar cadastro para clientes maiores de 18 anos e Digíto Verificador do CPF.
         if (campoInvalido[tipoDeEntrada])
-            campoInvalido[tipoDeEntrada](dadosEntrada);             
+            campoInvalido[tipoDeEntrada](dadosEntradas);             
+            
 
         // Condição de mensagens de erro ou validação de campos da entrada de dados.
-        if (!dadosEntrada.validity.valid) {
+        if (!dadosEntradas.validity.valid) {
             //  Msg de erro personalizada para cada propriedade do objeto ValidityState
-            dadosEntrada.parentElement.querySelector('.entrada__mensagem--erro').innerHTML       =apresentaMsgErro(tipoDeEntrada, dadosEntrada);
-            dadosEntrada.parentElement.classList.remove('caixa__entrada--form--valido');
-            dadosEntrada.parentElement.classList.add('caixa__entrada--form--invalido');
+            dadosEntradas.parentElement.querySelector('.entrada__mensagem--erro').innerHTML = apresentaMsgErro(tipoDeEntrada, dadosEntradas);
+            dadosEntradas.parentElement.classList.remove('caixa__entrada--form--valido');
+            dadosEntradas.parentElement.classList.add('caixa__entrada--form--invalido');
         }  else {
-            dadosEntrada.parentElement.classList.remove('caixa__entrada--form--invalido');
-            dadosEntrada.parentElement.classList.add('caixa__entrada--form--valido'); 
+            dadosEntradas.parentElement.classList.remove('caixa__entrada--form--invalido');
+            dadosEntradas.parentElement.classList.add('caixa__entrada--form--valido'); 
         }   
     }
 
@@ -33,11 +34,11 @@ export function validar(dadosEntrada) {
         'patternMismatch',
         'customError'
     ]
-    function apresentaMsgErro(tipoEntrada, dadosEntrada) {
+    function apresentaMsgErro(tipoEntrada, dadosEntradas) {
         let msg = '';
         for (let indice = 0; indice < tiposDeErroEntrada.length; indice++) {
             const erro = tiposDeErroEntrada[indice];
-            if (dadosEntrada.validity[erro]) {
+            if (dadosEntradas.validity[erro]) {
                 msg = mensagensErro[tipoEntrada][erro];
             }            
         }
@@ -109,35 +110,44 @@ export function validar(dadosEntrada) {
     
     // Início da lógica para para autorizar cadastro de maiores de 18 anos e o digíto verificador do CPF.
 
-    const campoInvalido = {
-        // nascimento: dadosEntrada => confirmaDataNascimento(dadosEntrada.value)
-        nascimento (dadosEntrada) {
-            confirmaDataNascimento(dadosEntrada.value);
+    const campoInvalido = {        
+        nascimento (dataEntrada) {
+            let data = dataEntrada.value;
+            if(data === "") {
+                return dataEntrada;
+            } else {
+                confirmaDataNascimento(dataEntrada);
+            }
         }
         ,
-        cpf: cpfDigitado => validarCpf(cpfDigitado.value)        
+
+        cpf (cpfDigitado) {
+            let cpf = cpfDigitado.value;
+            if (cpf === "") {
+                return cpfDigitado;
+            } else {
+                validarCpf(cpfDigitado);
+            }
+        }        
     }
     
 
     // Início da lógica para cadastro para maiores de 18 anos.
     function confirmaDataNascimento (dataEntrada) {
         
-        let vetorData = dataEntrada.split("/");
+        let dataPura = dataEntrada.value;
+        let vetorData = dataPura.split("/");
         let mes = vetorData[1];
         let dia = vetorData[0];
         let ano = vetorData[2];
         let dataReconfigurada = `${mes}/${dia}/${ano}`;
         let dataSistemaOper = new Date(dataReconfigurada);
         
-        let mensagemErro = document.parentElement.getElementsByClassName('entrada__mensagem--erro');
-        mensagemErro.innetHTML = '';
-        try {
-        if (!idadeAutorizada(dataSistemaOper)) throw new Error ("O cadastro só é autorizado para maiores de 18 anos!");
-        
-        } catch (error) {
-            mensagemErro.innerHTML = error;
+        let msg = '';
+        if(!idadeAutorizada(dataSistemaOper)) {
+            msg = 'O cadastro só é autorizado para maiores de 18 anos!'
         }
-
+            dataEntrada.setCustomValidity(msg);        
      }
  
      function idadeAutorizada (data) {
@@ -153,18 +163,23 @@ export function validar(dadosEntrada) {
         
         return idadeUsuario <= dataAtualAlterada;
      }
-
     //  Fim da tarefa para clientes maiores de 18 anos.
 
 
+
   // Início da lógica do CPF verificador.  
-    function validarCpf(dadosEntrada) {        
-        let cpfSemMascara = dadosEntrada.replace(/\W/g, '');
+    function validarCpf(cpfDigitado) {
+
+        let cpfUsuario = cpfDigitado.value;
+        let cpfSemMascara = cpfUsuario.replace(/\W/g, '');
+        
+        let msg = '';
+        
         if (!checaCpf(cpfSemMascara) || !estruturaCpf(cpfSemMascara)) {
-            dadosEntrada.setCustomValidity('Cpf inválido.')
-        } else {
-            dadosEntrada.setCustomValidity("")
-        }
+            msg = 'Cpf inválido.'
+        } 
+            cpfDigitado.setCustomValidity(msg);
+        
     }    
     function checaCpf(cpf) {                
         const cpfRepetido = [
