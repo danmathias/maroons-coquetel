@@ -113,6 +113,8 @@ export function validar(dadosEntradas) {
     const campoInvalido = {        
         nascimento (dataEntrada) {
             let data = dataEntrada.value;
+            
+            // Condição que dá continuidade na trilha do código, apenas se o usuário preencheu o respectivo campo.
             if(data === "") {
                 return dataEntrada;
             } else {
@@ -123,6 +125,8 @@ export function validar(dadosEntradas) {
 
         cpf (cpfDigitado) {
             let cpf = cpfDigitado.value;
+
+            // Condição que dá continuidade na trilha do código, apenas se o usuário preencheu o respectivo campo.
             if (cpf === "") {
                 return cpfDigitado;
             } else {

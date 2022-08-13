@@ -200,7 +200,7 @@
                   
                   <div class="caixa__entrada--form ">
                     <label for="senha" class="rotulo--entrada">Senha:</label>
-                    <input type="password" name="senha" pattern="(?=^.{8,255}$)((?=.*\d)(?=.*[A-Z])(?=.*[a-z])|(?=.*\d)(?=.*[^A-Za-z0-9])(?=.*[a-z])|(?=.*[^A-Za-z0-9])(?=.*[A-Z])(?=.*[a-z])|(?=.*\d)(?=.*[A-Z])(?=.*[^A-Za-z0-9]))^.*" id="senha" class="input--cadastrar" data-entrada="senha" required>
+                    <input type="password" name="senha" pattern="(?=^.{10,255})((?=.*[\W])(?=.*\d)(?=.*[\w]))*" id="senha" class="input--cadastrar" data-entrada="senha" required>
                     <span class="entrada__mensagem--erro"></span>                           
                   </div>
                   
