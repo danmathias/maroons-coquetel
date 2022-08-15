@@ -19,7 +19,7 @@ export function validar(dadosEntradas) {
             //  Msg de erro personalizada para cada propriedade do objeto ValidityState
             dadosEntradas.parentElement.querySelector('.entrada__mensagem--erro').innerHTML = apresentaMsgErro(tipoDeEntrada, dadosEntradas);
             dadosEntradas.parentElement.classList.remove('caixa__entrada--form--valido');
-            dadosEntradas.parentElement.classList.add('caixa__entrada--form--invalido');
+            dadosEntradas.parentElement.classList.add('caixa__entrada--form--invalido');            
         }  else {
             dadosEntradas.parentElement.classList.remove('caixa__entrada--form--invalido');
             dadosEntradas.parentElement.classList.add('caixa__entrada--form--valido'); 
@@ -47,32 +47,33 @@ export function validar(dadosEntradas) {
     //  Objeto exclusivo para sinalização de dadosEntrada incorretos.
     const mensagensErro = {
         nome: {
-            valueMissing: 'Insira o seu Nome, por favor.'
+            valueMissing: 'Insira o seu Nome.'
         }
         ,
         cpf: {
-            valueMissing: 'Insira o número do seu CPF, por favor.',
+            valueMissing: 'Insira o seu CPF.',
             customError: 'Cpf inválido.'
         }
         ,
         nascimento: {
-            valueMissing: 'Insira a sua Data de Nascimento, por favor.',
-            customError: 'O cadastro só é autorizado para maiores de 18 anos!'
+            valueMissing: 'Insira a data de nascimento.',
+            customError: 'Cadastro só para maiores 18 anos!'
         }
         ,
         email: {
-            valueMissing: 'Insira o seu Email, por favor.' ,
-            typeMismatch: 'O formato do seu Email é inválido. Por favor, tente novamente'
+            valueMissing: 'Insira o seu email.',
+            typeMismatch: 'Email inválido. Por favor, tente novamente'
         }
         , 
         telefone: {
-            valueMissing: 'Insira o seu Número de Telefone, por favor.',
+            valueMissing: 'Insira o número de telefone.',
             patternMismatch: 'O número digitado é insuficiente.'
         }
         ,
         senha: {
-            valueMissing: 'Insira a sua Senha, por favor.' ,
-            patternMismatch: 'A Senha deve ter no mínimo 8 caracteres, que por regra são: 1 letra maiúscula e 1 minúscula, 1 número e 1 caractere especial, por exemplo($%@&+/).'
+            valueMissing: 'Insira a sua Senha.',
+            patternMismatch: `<p>A senha deve ter no mínimo 10 caracteres.</p>
+                              <p> 1 minúsculo, 1 maiúsculo, 1 número e um caracter especial.</p>`
         }
     }
     // Fim da tarefa.
@@ -146,6 +147,7 @@ export function validar(dadosEntradas) {
         let ano = vetorData[2];
         let dataReconfigurada = `${mes}/${dia}/${ano}`;
         let dataSistemaOper = new Date(dataReconfigurada);
+
         
         let msg = '';
         if(!idadeAutorizada(dataSistemaOper)) {

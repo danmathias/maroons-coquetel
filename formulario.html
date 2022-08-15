@@ -200,19 +200,20 @@
                   
                   <div class="caixa__entrada--form ">
                     <label for="senha" class="rotulo--entrada">Senha:</label>
-                    <input type="password" name="senha" pattern="(?=^.{10,255})((?=.*[\W])(?=.*\d)(?=.*[\w]))*" id="senha" class="input--cadastrar" data-entrada="senha" required>
+                    <input type="password" name="senha" pattern="(?=^.{10,255})((?=.*[\W])(?=.*\d)(?=.*[\w])).*" id="senha" class="input--cadastrar" data-entrada="senha" required>
                     <span class="entrada__mensagem--erro"></span>                           
                   </div>
                   
+                  <!-- pattern="(?=^.{8,255}$)((?=.*\d)(?=.*[A-Z])(?=.*[a-z])|(?=.*\d)(?=.*[^A-Za-z0-9])(?=.*[a-z])|(?=.*[^A-Za-z0-9])(?=.*[A-Z])(?=.*[a-z])|(?=.*\d)(?=.*[A-Z])(?=.*[^A-Za-z0-9]))^.*" -->
                   <div class="caixa__entrada--form ">
                     <label for="senha" class="rotulo--entrada">Confirmar Senha:</label>
-                    <input type="password" name="senha" id="senha" pattern="(?=^.{8,255}$)((?=.*\d)(?=.*[A-Z])(?=.*[a-z])|(?=.*\d)(?=.*[^A-Za-z0-9])(?=.*[a-z])|(?=.*[^A-Za-z0-9])(?=.*[A-Z])(?=.*[a-z])|(?=.*\d)(?=.*[A-Z])(?=.*[^A-Za-z0-9]))^.*" class="input--cadastrar" required data-entrada="senha" required> 
+                    <input type="password" name="senha" id="senha" class="input--cadastrar" required data-entrada="confirma-senha" required> 
                     <span class="entrada__mensagem--erro"></span>
                   </div>
 
                   <div class="caixa__entrada--form">
                     <fieldset class="caixa__principal--alternativa">
-                      <legend class="rotulo--entrada">Como você se encaixa no mundo da coquetelaria?</legend>													
+                      <legend class="rotulo--entrada">Na coquetelaria, você é?</legend>													
                       <select id="experiencia" class="experiencia__usuario">
                           <option>Amador</option>
                           <option>Profissional</option>
@@ -222,7 +223,8 @@
 
                   <div class="caixa__entrada--form">
                     <fieldset id="pcd" class="caixa__principal--alternativa">					
-                      <legend class="rotulo--entrada">Pessoa com deficiência ou síndrome?</legend>			
+                      <legend class="rotulo--entrada">PCD ou Síndrome?</legend>			
+                      <p class="subtitulo__pcd">PCD - Pessoa com deficiência</p>
                         <label for="radio-sim">
                           <input type="radio" name="pcd" value="sim" id="radio-sim"> Sim
                         </label>												
