@@ -9,6 +9,10 @@ export function validar(dadosEntradas) {
         if (mascara[tipoDeEntrada]) 
             dadosEntradas.value = mascara[tipoDeEntrada](dadosEntradas);      
 
+        if (mostraSenha[tipoDeEntrada]) {
+            mostraSenha[tipoDeEntrada](dadosEntradas);
+        }
+
         // Condição para autorizar cadastro para clientes maiores de 18 anos e Digíto Verificador do CPF.
         if (campoInvalido[tipoDeEntrada])
             campoInvalido[tipoDeEntrada](dadosEntradas);             
@@ -26,6 +30,31 @@ export function validar(dadosEntradas) {
         }   
     }
 
+
+    const mostraSenha = {
+        senha (senhaDigitada) {
+            this.confirmaSenha(senhaDigitada);    
+        }
+        ,
+        confirmaSenha (senhaDigitada, confirmaSenha) {            
+           this.olhoMagico(senhaDigitada, confirmaSenha);
+        }
+        , 
+        olhoMagico (senhaDigitada, confirmaSenha, mostraSenha) {
+            const senha = senhaDigitada;
+            const afirmaSenha = confirmaSenha;
+            const olhoMagico = mostraSenha;
+
+            olhoMagico.addEventListener('click', function() {
+                if (senha.type === "password") {
+                    senha.type = "text";            
+                } else {
+                    senha.type = "password";
+                }
+            })
+        }
+    }    
+    
 
     // Início da lógica para verificar tipos de erros de entrada no formulário.
     const tiposDeErroEntrada = [
@@ -72,8 +101,16 @@ export function validar(dadosEntradas) {
         ,
         senha: {
             valueMissing: 'Insira a sua Senha.',
-            patternMismatch: `<p>A senha deve ter no mínimo 10 caracteres.</p>
-                              <p> 1 minúsculo, 1 maiúsculo, 1 número e um caracter especial.</p>`
+            patternMismatch: `<p>Mínimo de 10 caracteres.</p>
+                              <p>É obrigatório:
+                              <br>  
+                               1 letra minúscula;
+                               <br>
+                               1 letra maiúsculo;
+                               <br>
+                               1 número;
+                               <br>
+                               1 caracter especial.</p>`
         }
     }
     // Fim da tarefa.

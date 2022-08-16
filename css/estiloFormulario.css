@@ -106,14 +106,21 @@
     text-decoration: none;
     color: #121010;
 }
-.link__recupera--senha:hover {
-    background-color: #121010;
-    color: #fffcfc;
-    text-transform: uppercase;
-    padding: 10px;
-    transition: all .8s;
+.mostra--senha {
+    position: absolute;   
+    right: .5em;
+    top: 2.5em;
+    opacity: 1;    
+    cursor: pointer;
+    z-index: 1;
 }
-
+.olho--magico {
+    position: absolute;
+    right: .3em;
+    top: 2.3em; 
+    width: 20px; 
+    display: none;  
+}
 .subtitulo__pcd {
     font-size: 10px;
     font-weight: bold;
@@ -130,14 +137,21 @@
     margin: 10px auto;
     padding: 10px;    
 }
-.acessar:hover {
+.cadastrar:hover {
     background-color: #fffcfc;
     border: 1px solid #121010;
     font-size: 20px;
     color: #121010;
     transition: all .5s;
 }
-.cadastrar:hover {
+.link__recupera--senha:hover {
+    background-color: #121010;
+    color: #fffcfc;
+    text-transform: uppercase;
+    padding: 10px;
+    transition: all .8s;
+}
+.acessar:hover {
     background-color: #fffcfc;
     border: 1px solid #121010;
     font-size: 20px;
