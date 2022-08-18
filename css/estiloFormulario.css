@@ -110,7 +110,7 @@
     position: absolute;   
     right: .5em;
     top: 2.5em;
-    opacity: 1;    
+    opacity: 0;    
     cursor: pointer;
     z-index: 1;
 }
@@ -118,8 +118,7 @@
     position: absolute;
     right: .3em;
     top: 2.3em; 
-    width: 20px; 
-    display: none;  
+    width: 20px;    
 }
 .subtitulo__pcd {
     font-size: 10px;

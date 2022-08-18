@@ -201,7 +201,7 @@
                   <div class="caixa__entrada--form ">
                     <label for="senha" class="rotulo--entrada">Senha:</label>
                     <input type="password" name="senha" pattern="(?=^.{10,255})((?=.*[\W])(?=.*\d)(?=.*[\w])(?=.*[A-Z])).*" id="senha" class="input--cadastrar" data-entrada="senha" required>
-                    <input type="checkbox" name="senha" id="senha" data-entrada="olhoMagico" class="mostra--senha">
+                    <input type="checkbox" name="olho--magico" id="olho--magico" class="mostra--senha" data-mostra-senha="olhoMagico">
                     <img src="./imagens/olho-magico.png" id="olho--magico" class="olho--magico" alt="imagem de um olho que apresenta a senha que foi digitada">
                     <span class="entrada__mensagem--erro"></span>                           
                   </div>
@@ -209,8 +209,8 @@
                   <!-- pattern="(?=^.{8,255}$)((?=.*\d)(?=.*[A-Z])(?=.*[a-z])|(?=.*\d)(?=.*[^A-Za-z0-9])(?=.*[a-z])|(?=.*[^A-Za-z0-9])(?=.*[A-Z])(?=.*[a-z])|(?=.*\d)(?=.*[A-Z])(?=.*[^A-Za-z0-9]))^.*" -->
                   <div class="caixa__entrada--form ">
                     <label for="confirmaSenha" class="rotulo--entrada">Confirmar Senha:</label>
-                    <input type="password" name="confirmaSenha" id="confirmaSenha" class="input--cadastrar" required data-entrada="confirmaSenha" required>
-                    <input type="checkbox" name="confirmaSenha" id="olho-magico" data-entrada="" class="mostra--senha">
+                    <input type="password" name="confirma-senha" id="senha" class="input--cadastrar" data-entrada="senha" required>
+                    <input type="checkbox" name="olho-magico" id="olho-magico" class="mostra--senha">
                     <img src="./imagens/olho-magico.png" id="olho--magico" class="olho--magico" alt="imagem de um olho que apresenta a senha que foi digitada">
                     <span class="entrada__mensagem--erro"></span>
                   </div>

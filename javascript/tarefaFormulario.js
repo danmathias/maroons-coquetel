@@ -8,10 +8,7 @@ export function validar(dadosEntradas) {
         // Condição das máscaras do input do formulário.
         if (mascara[tipoDeEntrada]) 
             dadosEntradas.value = mascara[tipoDeEntrada](dadosEntradas);      
-
-        if (mostraSenha[tipoDeEntrada]) {
-            mostraSenha[tipoDeEntrada](dadosEntradas);
-        }
+          
 
         // Condição para autorizar cadastro para clientes maiores de 18 anos e Digíto Verificador do CPF.
         if (campoInvalido[tipoDeEntrada])
@@ -29,31 +26,19 @@ export function validar(dadosEntradas) {
             dadosEntradas.parentElement.classList.add('caixa__entrada--form--valido'); 
         }   
     }
+    
+    function verASenha (senhaDigitada) {
+        const olharMagico = document.querySelector('[data-mostra-senha]')
+        const senha = senhaDigitada;
 
-
-    const mostraSenha = {
-        senha (senhaDigitada) {
-            this.confirmaSenha(senhaDigitada);    
-        }
-        ,
-        confirmaSenha (senhaDigitada, confirmaSenha) {            
-           this.olhoMagico(senhaDigitada, confirmaSenha);
-        }
-        , 
-        olhoMagico (senhaDigitada, confirmaSenha, mostraSenha) {
-            const senha = senhaDigitada;
-            const afirmaSenha = confirmaSenha;
-            const olhoMagico = mostraSenha;
-
-            olhoMagico.addEventListener('click', function() {
-                if (senha.type === "password") {
-                    senha.type = "text";            
-                } else {
-                    senha.type = "password";
-                }
-            })
-        }
-    }    
+        olharMagico.addEventListener('click', function () {        
+            if (senha.type === "text") {
+                senha.type = "password";
+            } else {
+                senha.type = "text"
+            }
+        });              
+    }
     
 
     // Início da lógica para verificar tipos de erros de entrada no formulário.
@@ -171,6 +156,12 @@ export function validar(dadosEntradas) {
                 validarCpf(cpfDigitado);
             }
         }        
+        ,
+
+        senha (senhaDigitada) {          
+            this.senha = senhaDigitada
+            verASenha(this.senha);            
+          }     
     }
     
 
