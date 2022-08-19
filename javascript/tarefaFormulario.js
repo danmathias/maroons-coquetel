@@ -11,8 +11,8 @@ export function validar(dadosEntradas) {
           
 
         // Condição para autorizar cadastro para clientes maiores de 18 anos e Digíto Verificador do CPF.
-        if (campoInvalido[tipoDeEntrada])
-            campoInvalido[tipoDeEntrada](dadosEntradas);             
+        if (campoInvalido[tipoDeEntrada]) 
+        campoInvalido[tipoDeEntrada](dadosEntradas);             
             
 
         // Condição de mensagens de erro ou validação de campos da entrada de dados.
@@ -25,20 +25,7 @@ export function validar(dadosEntradas) {
             dadosEntradas.parentElement.classList.remove('caixa__entrada--form--invalido');
             dadosEntradas.parentElement.classList.add('caixa__entrada--form--valido'); 
         }   
-    }
-    
-    function verASenha (senhaDigitada) {
-        const olharMagico = document.querySelector('[data-mostra-senha]')
-        const senha = senhaDigitada;
-
-        olharMagico.addEventListener('click', function () {        
-            if (senha.type === "text") {
-                senha.type = "password";
-            } else {
-                senha.type = "text"
-            }
-        });              
-    }
+    }    
     
 
     // Início da lógica para verificar tipos de erros de entrada no formulário.
@@ -97,6 +84,11 @@ export function validar(dadosEntradas) {
                                <br>
                                1 caracter especial.</p>`
         }
+        ,
+        confirmaSenha: {
+            valueMissing: 'Insira a sua Senha.',
+            customError: "Senhas diferentes."
+        }
     }
     // Fim da tarefa.
     
@@ -148,8 +140,7 @@ export function validar(dadosEntradas) {
 
         cpf (cpfDigitado) {
             let cpf = cpfDigitado.value;
-
-            // Condição que dá continuidade na trilha do código, apenas se o usuário preencheu o respectivo campo.
+          
             if (cpf === "") {
                 return cpfDigitado;
             } else {
@@ -158,12 +149,45 @@ export function validar(dadosEntradas) {
         }        
         ,
 
-        senha (senhaDigitada) {          
-            this.senha = senhaDigitada
-            verASenha(this.senha);            
-          }     
+        senha (senhaDigitada) {                   
+            this.senhaUsuario = senhaDigitada;        
+            verASenha(senhaDigitada, this.confSenha);            
+            
+        }
+        ,
+        confirmaSenha (confirmaSenhaDigitada) {
+            this.confSenha = confirmaSenhaDigitada;   
+            comparaSenhas(confirmaSenhaDigitada, this.senhaUsuario)
+        }
+    }
+
+    function comparaSenhas (confirmaSenhaDigitada, senhaDigitada) {
+
+        const primeiraSenha = senhaDigitada.value;
+        const segundaSenha = confirmaSenhaDigitada.value;
+        
+        let msg = ""
+        if (segundaSenha !== primeiraSenha) {
+            msg = 'Senhas diferentes.'
+        } 
+            confirmaSenhaDigitada.setCustomValidity(msg);          
     }
     
+    function verASenha (senhaDigitada, confSenha) {
+        const olharMagicos = document.querySelectorAll('[data-mostra-senha]');
+        const senha = senhaDigitada;
+        const confirmaSenha = confSenha;
+        
+        olharMagicos.forEach(olharMagico => olharMagico.addEventListener('click', function () {        
+            if (senha.type === "text") {
+                senha.type = "password";
+                
+            } else {
+                senha.type = "text";                
+            }            
+        }));              
+    }
+
 
     // Início da lógica para cadastro para maiores de 18 anos.
     function confirmaDataNascimento (dataEntrada) {
