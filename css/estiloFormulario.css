@@ -146,7 +146,6 @@
 .link__recupera--senha:hover {
     background-color: #121010;
     color: #fffcfc;
-    text-transform: uppercase;
     padding: 10px;
     transition: all .8s;
 }

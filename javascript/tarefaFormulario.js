@@ -12,7 +12,7 @@ export function validar(dadosEntradas) {
 
         // Condição para autorizar cadastro para clientes maiores de 18 anos e Digíto Verificador do CPF.
         if (campoInvalido[tipoDeEntrada]) 
-        campoInvalido[tipoDeEntrada](dadosEntradas);             
+            campoInvalido[tipoDeEntrada](dadosEntradas);             
             
 
         // Condição de mensagens de erro ou validação de campos da entrada de dados.
@@ -30,64 +30,64 @@ export function validar(dadosEntradas) {
 
     // Início da lógica para verificar tipos de erros de entrada no formulário.
     const tiposDeErroEntrada = [
-        'valueMissing', 
-        'typeMismatch',
-        'patternMismatch',
-        'customError'
+      'valueMissing', 
+      'typeMismatch',
+      'patternMismatch',
+      'customError'
     ]
     function apresentaMsgErro(tipoEntrada, dadosEntradas) {
         let msg = '';
         for (let indice = 0; indice < tiposDeErroEntrada.length; indice++) {
-            const erro = tiposDeErroEntrada[indice];
-            if (dadosEntradas.validity[erro]) {
-                msg = mensagensErro[tipoEntrada][erro];
-            }            
+          const erro = tiposDeErroEntrada[indice];
+          if (dadosEntradas.validity[erro]) {
+              msg = mensagensErro[tipoEntrada][erro];
+          }            
         }
         return msg;
     }
     //  Objeto exclusivo para sinalização de dadosEntrada incorretos.
     const mensagensErro = {
         nome: {
-            valueMissing: 'Insira o seu Nome.'
+          valueMissing: 'Insira o seu Nome.'
         }
         ,
         cpf: {
-            valueMissing: 'Insira o seu CPF.',
-            customError: 'Cpf inválido.'
+          valueMissing: 'Insira o seu CPF.',
+          customError: 'Cpf inválido.'
         }
         ,
         nascimento: {
-            valueMissing: 'Insira a data de nascimento.',
-            customError: 'Cadastro só para maiores 18 anos!'
+          valueMissing: 'Insira a data de nascimento.',
+          customError: 'Cadastro só para maiores 18 anos!'
         }
         ,
         email: {
-            valueMissing: 'Insira o seu email.',
-            typeMismatch: 'Email inválido. Por favor, tente novamente'
+          valueMissing: 'Insira o seu email.',
+          typeMismatch: 'Email inválido. Por favor, tente novamente'
         }
         , 
         telefone: {
-            valueMissing: 'Insira o número de telefone.',
-            patternMismatch: 'O número digitado é insuficiente.'
+          valueMissing: 'Insira o número de telefone.',
+          patternMismatch: 'O número digitado é insuficiente.'
         }
         ,
         senha: {
-            valueMissing: 'Insira a sua Senha.',
-            patternMismatch: `<p>Mínimo de 10 caracteres.</p>
-                              <p>É obrigatório:
-                              <br>  
-                               1 letra minúscula;
-                               <br>
-                               1 letra maiúsculo;
-                               <br>
-                               1 número;
-                               <br>
-                               1 caracter especial.</p>`
+          valueMissing: 'Insira a sua Senha.',
+          patternMismatch: `<p>Mínimo de 10 caracteres.</p>
+                            <p>É obrigatório:
+                            <br>  
+                              1 letra minúscula;
+                              <br>
+                              1 letra maiúsculo;
+                              <br>
+                              1 número;
+                              <br>
+                              1 caracter especial.</p>`
         }
         ,
         confirmaSenha: {
-            valueMissing: 'Insira a sua Senha.',
-            customError: "Senhas diferentes."
+          valueMissing: 'Confira a senha.',
+          customError: "Senhas diferentes."
         }
     }
     // Fim da tarefa.
@@ -97,27 +97,27 @@ export function validar(dadosEntradas) {
     // Início da lógica para inserção de máscaras nas entradas do formulário.    
     const mascara = {
         nascimento (dadosEntrada) {
-            dadosEntrada = dadosEntrada.value.replace(/\D/g, "");
-            dadosEntrada = dadosEntrada.replace(/(0[1-9]|1[0-9]|2[0-9]|3[0-1])(\d)/, '$1/$2');
-            dadosEntrada = dadosEntrada.replace(/(0[1-9]|1[0-2])(\d)/, '$1/$2');
-            dadosEntrada = dadosEntrada.replace(/([^3-9]\d{4})\d+?$/, "$1");            
-            return dadosEntrada;          
+          dadosEntrada = dadosEntrada.value.replace(/\D/g, "");
+          dadosEntrada = dadosEntrada.replace(/(0[1-9]|1[0-9]|2[0-9]|3[0-1])(\d)/, '$1/$2');
+          dadosEntrada = dadosEntrada.replace(/(0[1-9]|1[0-2])(\d)/, '$1/$2');
+          dadosEntrada = dadosEntrada.replace(/([^3-9]\d{4})\d+?$/, "$1");            
+          return dadosEntrada;          
         }
         , 
         cpf (dadosEntrada) {
-            dadosEntrada = dadosEntrada.value.replace(/\D/g, '');
-            dadosEntrada = dadosEntrada.replace(/(\d{3})(\d)/, '$1.$2');
-            dadosEntrada = dadosEntrada.replace(/(\d{3})(\d)/, '$1.$2');
-            dadosEntrada = dadosEntrada.replace(/(\d{3})(\d)/, '$1-$2');
-            dadosEntrada = dadosEntrada.replace(/(-\d{2})\d+?$/, '$1');
-            return dadosEntrada
+          dadosEntrada = dadosEntrada.value.replace(/\D/g, '');
+          dadosEntrada = dadosEntrada.replace(/(\d{3})(\d)/, '$1.$2');
+          dadosEntrada = dadosEntrada.replace(/(\d{3})(\d)/, '$1.$2');
+          dadosEntrada = dadosEntrada.replace(/(\d{3})(\d)/, '$1-$2');
+          dadosEntrada = dadosEntrada.replace(/(-\d{2})\d+?$/, '$1');
+          return dadosEntrada;
         }
         ,        
         telefone (dadosEntrada) {                        
-            dadosEntrada = dadosEntrada.value.replace(/\D/g, '');
-            dadosEntrada = dadosEntrada.replace(/^(\d{2})(\d{4,5})(\d{4})/g, '($1) $2-$3');
-            dadosEntrada = dadosEntrada.replace(/(-\d{4})\d+?$/g, '$1');
-            return dadosEntrada;                       
+          dadosEntrada = dadosEntrada.value.replace(/\D/g, '');
+          dadosEntrada = dadosEntrada.replace(/^(\d{2})(\d{4,5})(\d{4})/g, '($1) $2-$3');
+          dadosEntrada = dadosEntrada.replace(/(-\d{4})\d+?$/g, '$1');
+          return dadosEntrada;                       
         }        
     }
     // Fim da tarefa.
@@ -125,101 +125,106 @@ export function validar(dadosEntradas) {
     
     // Início da lógica para para autorizar cadastro de maiores de 18 anos e o digíto verificador do CPF.
 
-    const campoInvalido = {        
+    const campoInvalido = {   
+
         nascimento (dataEntrada) {
-            let data = dataEntrada.value;
-            
-            // Condição que dá continuidade na trilha do código, apenas se o usuário preencheu o respectivo campo.
-            if(data === "") {
-                return dataEntrada;
-            } else {
-                confirmaDataNascimento(dataEntrada);
-            }
+          let data = dataEntrada.value;
+          
+          // Condição que dá continuidade na trilha do código, apenas se o usuário preencheu o respectivo campo.
+          if(data === "") {
+              return dataEntrada;
+          } else { 
+              confirmaDataNascimento(dataEntrada);
+          }
         }
         ,
 
         cpf (cpfDigitado) {
-            let cpf = cpfDigitado.value;
-          
-            if (cpf === "") {
-                return cpfDigitado;
-            } else {
-                validarCpf(cpfDigitado);
-            }
+          let cpf = cpfDigitado.value;
+        
+          if (cpf === "") {
+              return cpfDigitado;
+          } else {
+              validarCpf(cpfDigitado);
+          };
         }        
         ,
 
-        senha (senhaDigitada) {                   
-            this.senhaUsuario = senhaDigitada;        
-            verASenha(senhaDigitada, this.confSenha);            
-            
+        senha (senhaDigitada) {
+          this.senhaUsuario = senhaDigitada;        
+          // verASenha(senhaDigitada, this.confSenha);          
+          
         }
         ,
+        
         confirmaSenha (confirmaSenhaDigitada) {
-            this.confSenha = confirmaSenhaDigitada;   
-            comparaSenhas(confirmaSenhaDigitada, this.senhaUsuario)
+          this.confSenha = confirmaSenhaDigitada;   
+          comparaSenhas(confirmaSenhaDigitada, this.senhaUsuario)
         }
-    }
+        
+      }
 
     function comparaSenhas (confirmaSenhaDigitada, senhaDigitada) {
 
-        const primeiraSenha = senhaDigitada.value;
-        const segundaSenha = confirmaSenhaDigitada.value;
-        
-        let msg = ""
-        if (segundaSenha !== primeiraSenha) {
-            msg = 'Senhas diferentes.'
-        } 
-            confirmaSenhaDigitada.setCustomValidity(msg);          
+      const primeiraSenha = senhaDigitada.value;
+      const segundaSenha = confirmaSenhaDigitada.value;
+      
+      let msg = ""
+      if (segundaSenha !== primeiraSenha) {
+          msg = 'Senhas diferentes.';
+      } 
+          confirmaSenhaDigitada.setCustomValidity(msg);          
     }
     
-    function verASenha (senhaDigitada, confSenha) {
-        const olharMagicos = document.querySelectorAll('[data-mostra-senha]');
-        const senha = senhaDigitada;
-        const confirmaSenha = confSenha;
-        
-        olharMagicos.forEach(olharMagico => olharMagico.addEventListener('click', function () {        
-            if (senha.type === "text") {
-                senha.type = "password";
-                
-            } else {
-                senha.type = "text";                
-            }            
-        }));              
+    export function verASenha (senhaDigitada, confSenha) {
+      
+      // const senha = senhaDigitada;
+      // const confirmaSenha = confSenha;           
+      
+
+      // if (senha.type === "password") {
+      //     senha.type = "text";
+      // } else {
+      //     senha.type = "password";
+      // }       
+
     }
+
+    // const olharMagico = document.querySelector('[data-mostra-senha]');
+    // olharMagico.addEventListener('click', function verASenha() { });              
 
 
     // Início da lógica para cadastro para maiores de 18 anos.
     function confirmaDataNascimento (dataEntrada) {
         
-        let dataPura = dataEntrada.value;
-        let vetorData = dataPura.split("/");
-        let mes = vetorData[1];
-        let dia = vetorData[0];
-        let ano = vetorData[2];
-        let dataReconfigurada = `${mes}/${dia}/${ano}`;
-        let dataSistemaOper = new Date(dataReconfigurada);
+      let dataPura = dataEntrada.value;
+      let vetorData = dataPura.split("/");
+      let mes = vetorData[1];
+      let dia = vetorData[0];
+      let ano = vetorData[2];
+      let dataReconfigurada = `${mes}/${dia}/${ano}`;
+      let dataSistemaOper = new Date(dataReconfigurada);
 
-        
-        let msg = '';
-        if(!idadeAutorizada(dataSistemaOper)) {
-            msg = 'O cadastro só é autorizado para maiores de 18 anos!'
-        }
-            dataEntrada.setCustomValidity(msg);        
+      
+      let msg = '';
+      if(!idadeAutorizada(dataSistemaOper)) {
+        msg = 'O cadastro só é autorizado para maiores de 18 anos!'
+      }
+        dataEntrada.setCustomValidity(msg);        
      }
  
      function idadeAutorizada (data) {
         
-        const idadeUsuario = data;  
+      const idadeUsuario = data;  
 
-        const dataAtual = new Date();
-        const diaAtual = dataAtual.getDate();
-        const mesAtual = dataAtual.getMonth() + 1;
-        const anoAtual = dataAtual.getFullYear() - 18;
-        const novaData = `${mesAtual}/${diaAtual}/${anoAtual}`
-        const dataAtualAlterada = new Date(novaData);
-        
-        return idadeUsuario <= dataAtualAlterada;
+      const dataAtual = new Date();
+      const diaAtual = dataAtual.getDate();
+      const mesAtual = dataAtual.getMonth() + 1;
+      const anoAtual = dataAtual.getFullYear() - 18;
+      const novaData = `${mesAtual}/${diaAtual}/${anoAtual}`
+      const dataAtualAlterada = new Date(novaData);
+      
+      return idadeUsuario <= dataAtualAlterada;
      }
     //  Fim da tarefa para clientes maiores de 18 anos.
 
@@ -228,96 +233,94 @@ export function validar(dadosEntradas) {
   // Início da lógica do CPF verificador.  
     function validarCpf(cpfDigitado) {
 
-        let cpfUsuario = cpfDigitado.value;
-        let cpfSemMascara = cpfUsuario.replace(/\W/g, '');
-        
-        let msg = '';
-        
-        if (!checaCpf(cpfSemMascara) || !estruturaCpf(cpfSemMascara)) {
-            msg = 'Cpf inválido.'
-        } 
-            cpfDigitado.setCustomValidity(msg);
+      let cpfUsuario = cpfDigitado.value;
+      let cpfSemMascara = cpfUsuario.replace(/\W/g, '');
+      
+      let msg = '';
+      
+      if (!checaCpf(cpfSemMascara) || !estruturaCpf(cpfSemMascara)) {
+        msg = 'Cpf inválido.';
+      } 
+        cpfDigitado.setCustomValidity(msg);
         
     }    
     function checaCpf(cpf) {                
-        const cpfRepetido = [
-            '00000000000',
-            '11111111111',
-            '22222222222',
-            '33333333333',
-            '44444444444',
-            '55555555555',
-            '66666666666',
-            '77777777777',
-            '88888888888',
-            '99999999999'
-        ];    
-        let cpfValido = true;
-        cpfRepetido.forEach(valor => {
-            if (valor == cpf) {
-             cpfValido = false
-            }
-        })        
-        return cpfValido;         
+      const cpfRepetido = [
+        '00000000000',
+        '11111111111',
+        '22222222222',
+        '33333333333',
+        '44444444444',
+        '55555555555',
+        '66666666666',
+        '77777777777',
+        '88888888888',
+        '99999999999'
+      ];    
+      let cpfValido = true;
+      cpfRepetido.forEach(valor => {
+        if (valor == cpf) {
+          cpfValido = false
+        }
+      })        
+      return cpfValido;         
     }
 
     function estruturaCpf(cpf) {        
-        let multiplicador = 10
-        return checarDigitoVerificador(cpf, multiplicador)
+      let multiplicador = 10
+      return checarDigitoVerificador(cpf, multiplicador);
     }
 
     function checarDigitoVerificador(cpf, multiplicador) {
-        //  Condição para o laço ser interrompido.
-        if (multiplicador >= 12) return true;
-        let soma = 0        
-        //  Variável que impede que o valor multiplicador seja subscrito.        
-        let multiplicadorInicial = multiplicador;        
-        let cpfRecortado = cpf.substring(multiplicadorInicial - 1, 0).split('');
-        let digitoVerificador = cpf.charAt(multiplicadorInicial - 1);      
-        for (let contador = 0; multiplicadorInicial > 1 ; multiplicadorInicial--) {
-             soma = soma + cpfRecortado[contador] * multiplicadorInicial
-             contador++                         
-        }
-        if (digitoVerificador == confirmaDigito(soma)) {
-            // O valor de retorno da função checar... com parametro multiplicador volta somando + 1, 
-            // porque a próxima verificação  a ser feita no cpf, sera no décimo primeiro dígito.
-            return checarDigitoVerificador(cpf, multiplicador + 1)    
-        }
-        return false
+      //  Condição para o laço ser interrompido.
+      if (multiplicador >= 12) return true;
+      let soma = 0        
+      //  Variável que impede que o valor multiplicador seja subscrito.        
+      let multiplicadorInicial = multiplicador;        
+      let cpfRecortado = cpf.substring(multiplicadorInicial - 1, 0).split('');
+      let digitoVerificador = cpf.charAt(multiplicadorInicial - 1);      
+      for (let contador = 0; multiplicadorInicial > 1 ; multiplicadorInicial--) {
+            soma = soma + cpfRecortado[contador] * multiplicadorInicial
+            contador++                         
+      }
+      if (digitoVerificador == confirmaDigito(soma)) {
+          // O valor de retorno da função checar... com parametro multiplicador volta somando + 1, 
+          // porque a próxima verificação  a ser feita no cpf, sera no décimo primeiro dígito.
+          return checarDigitoVerificador(cpf, multiplicador + 1)    
+      }
+      return false;
     }
     function confirmaDigito(soma) {
-        return 11 - (soma % 11);       
-    }  
+      return 11 - (soma % 11);       
+  }  
     // Fim da tarefa CPF verifcador.
 
 
 
     //  Sequência de funções que manipulam a troca de abas do formulário.
-    function inativarAbas () {
-        abas.forEach(aba => aba.classList.remove('ativar'));
+    function inativarAbas (abas) {
+      abas.forEach(aba => aba.classList.remove('ativar'));
     }
 
     function esconderConteudo () {
-        const conteudos = document.querySelectorAll('[data-conteudo]');
-        conteudos.forEach(conteudo => conteudo.classList.add('esconder'));
+      const conteudos = document.querySelectorAll('[data-conteudo]');
+      conteudos.forEach(conteudo => conteudo.classList.add('esconder'));
     }
     
     function ativarConteudo (valor) {
-        const conteudo = document.querySelector(`[data-conteudo= ${valor}]`);
-        conteudo.classList.remove('esconder');
+      const conteudo = document.querySelector(`[data-conteudo= ${valor}]`);
+      conteudo.classList.remove('esconder');
     }
 
     function ativarAba (aba) {
-        aba.classList.add('ativar');
+      aba.classList.add('ativar');
     }
-
-    const abas = document.querySelectorAll('[data-aba]');
-    abas.forEach(aba => aba.addEventListener('click', () => {
-        const valor = aba.dataset.aba 
-        
-        inativarAbas();
+      
+    export function movimentaAbas (aba, abas) {
+        const valor = aba.dataset.aba;
+        inativarAbas(abas);
         esconderConteudo();
         ativarConteudo(valor);        
-        ativarAba(aba);
-    }));
+        ativarAba(aba);        
+    }
     //  Fim da tarefa abas
