@@ -194,13 +194,13 @@
 
                   <div class="caixa__entrada--form ">
                     <label for="telefone" class="rotulo--entrada">Telefone:</label>
-                    <input type="tel" id="telefone" name="telefone" class="input--cadastrar" required data-entrada="telefone">                           
+                    <input type="tel" id="telefone" name="telefone" class="input--cadastrar" required data-entrada="telefone" placeholder="DD número de telefone">                           
                     <span class="entrada__mensagem--erro"></span>
                   </div>
                   
                   <div class="caixa__entrada--form ">
                     <label for="senha" class="rotulo--entrada">Senha:</label>
-                    <input type="password" name="senha" pattern="(?=^.{10,255})((?=.*[\W])(?=.*\d)(?=.*[\w])(?=.*[A-Z])).*" id="senha" class="input--cadastrar" data-entrada="senha" required>
+                    <input type="password" name="senha" pattern="(?=^.{10,255})((?=.*[\W])(?=.*\d)(?=.*[a-z])(?=.*[A-Z])).*" id="senha" class="input--cadastrar" data-entrada="senha" required>
                     <input type="checkbox" name="olho--magico" id="olho--magico" class="mostra--senha" data-mostra-senha="senha">
                     <img src="./imagens/olho-magico.png" id="olho--magico" class="olho--magico" alt="imagem de um olho que apresenta a senha que foi digitada">
                     <span class="entrada__mensagem--erro"></span>                           

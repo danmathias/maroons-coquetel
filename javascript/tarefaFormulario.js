@@ -151,8 +151,7 @@ export function validar(dadosEntradas) {
         ,
 
         senha (senhaDigitada) {
-          this.senhaUsuario = senhaDigitada;        
-          // verASenha(senhaDigitada, this.confSenha);          
+          this.senhaUsuario = senhaDigitada;               
           
         }
         ,
@@ -160,6 +159,7 @@ export function validar(dadosEntradas) {
         confirmaSenha (confirmaSenhaDigitada) {
           this.confSenha = confirmaSenhaDigitada;   
           comparaSenhas(confirmaSenhaDigitada, this.senhaUsuario)
+          
         }
         
       }
@@ -170,6 +170,7 @@ export function validar(dadosEntradas) {
       const segundaSenha = confirmaSenhaDigitada.value;
       
       let msg = ""
+      
       if (segundaSenha !== primeiraSenha) {
           msg = 'Senhas diferentes.';
       } 
@@ -178,16 +179,25 @@ export function validar(dadosEntradas) {
     
     export function verASenha (senhaDigitada, confSenha) {
       
-      // const senha = senhaDigitada;
-      // const confirmaSenha = confSenha;           
       
+      const senha = senhaDigitada;
+      const confirmaSenha = confSenha;           
+      
+      const type = senha.getAttribute('type');
+      const type2 = confirmaSenha.getAttribute('type');
 
-      // if (senha.type === "password") {
-      //     senha.type = "text";
-      // } else {
-      //     senha.type = "password";
-      // }       
+      senha.setAttribute(
+        'type',
+          
+        type === 'password' ? 'text': 'password'
 
+      );
+
+      confirmaSenha.setAttribute(
+        "type",
+
+        type2 === "password" ? "text" : "password"
+      );
     }
 
     // const olharMagico = document.querySelector('[data-mostra-senha]');
