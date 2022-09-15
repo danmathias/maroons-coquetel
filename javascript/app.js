@@ -7,7 +7,7 @@ entradas.forEach(entrada => entrada.addEventListener('input', (evento) => {
 }, false));
 
 const abas = document.querySelectorAll('[data-aba]');
-abas.forEach(aba => aba.addEventListener('click', (evento) => {
+abas.forEach(aba => aba.addEventListener('click', function (evento)  {
     movimentaAbas(evento.target, abas);
 }, false));
 
